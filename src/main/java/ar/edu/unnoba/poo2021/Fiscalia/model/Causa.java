@@ -3,28 +3,22 @@ package ar.edu.unnoba.poo2021.Fiscalia.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "Causas")
+
 public class Causa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
-    @Column(name = "numero_expediente")
+
     private String numeroExpediente;
 
-    @Column(name = "juzgado")
+
     private String juzgado;
 
 
 
-    @ManyToMany
-    @JoinTable(name = "informacion_causas",
-    joinColumns=@JoinColumn(name = "causa_id"),
-    inverseJoinColumns = @JoinColumn(name = "informacion_id"))
     private List<Informacion> informaciones;
 
-    @Column(name = "contexto")
+
     private String contexto;
 
     public Long getId() {

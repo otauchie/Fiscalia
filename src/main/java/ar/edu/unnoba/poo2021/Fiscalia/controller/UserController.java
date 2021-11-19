@@ -1,5 +1,4 @@
 package ar.edu.unnoba.poo2021.Fiscalia.controller;
-
 import ar.edu.unnoba.poo2021.Fiscalia.model.User;
 import ar.edu.unnoba.poo2021.Fiscalia.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
