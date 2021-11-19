@@ -16,9 +16,7 @@ public class Causa {
     @Column(name = "juzgado")
     private String juzgado;
 
-    @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona victima;
+
 
     @ManyToMany
     @JoinTable(name = "informacion_causas",
@@ -53,13 +51,7 @@ public class Causa {
         this.juzgado = juzgado;
     }
 
-    public Persona getVictima() {
-        return victima;
-    }
 
-    public void setVictima(Persona victima) {
-        this.victima = victima;
-    }
 
     public List<Informacion> getInformaciones() {
         return informaciones;
