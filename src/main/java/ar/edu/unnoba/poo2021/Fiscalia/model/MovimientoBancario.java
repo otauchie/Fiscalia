@@ -1,5 +1,10 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Movimiento_Bancario")
 public class MovimientoBancario extends Informacion{
     private String cuenta;
     private String usuario;

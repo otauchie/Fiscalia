@@ -1,8 +1,14 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
-import java.util.Date;
+import org.hibernate.annotations.GeneratorType;
 
+import javax.persistence.*;
+import java.util.Date;
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Informacion {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String DireccionIP;
     private Date FechaHora;

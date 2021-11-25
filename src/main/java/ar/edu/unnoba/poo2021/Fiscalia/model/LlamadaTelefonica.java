@@ -1,6 +1,12 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Llamada_Telefonica")
 public class LlamadaTelefonica extends Informacion {
+
     private String numeroLlamada;
     private String numeroReceptor;
     private long duracion;

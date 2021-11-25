@@ -1,5 +1,10 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Red_Social")
 public class RedSocial extends Informacion{
     private String tipo;
     private String perfil;

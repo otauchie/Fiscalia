@@ -2,13 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Crear Usuario</title>
 </head>
 <body>
-    <div>New User</div>
+    <div>Nuevo Usuario</div>
     <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <input type="text" th:field="*{userName}"/>
-        <input type="password" th:field="*{password}"/>
+        <label> Usuario:</label><input type="text" th:field="*{userName}"/><br>
+        <label>Contraseña:</label>><input type="password" th:field="*{password}"/><br>
+        <label>Nombre:</label>><input type="text" th:field="*{nombre}"/><br>
+        <label>Apellido:</label>><input type="text" th:field="*{apellido}"/><br>
+        <label>E-mail:</label><input type="text" th:field="*{email}"><br>
         <button type="submit" name="newUser">Create</button>
     </form>
 </body>
