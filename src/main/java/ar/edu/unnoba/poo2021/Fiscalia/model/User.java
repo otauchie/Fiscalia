@@ -9,11 +9,44 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="user_name")
+    @Column(name = "user_name")
     private String userName;
 
-    @Column(name="pass")
+    @Column(name = "pass")
     private String password;
+
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Column(name= "apellido")
+    private String apellido;
+
+    @Column(name= "email")
+    private String email;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getId() {
         return id;
