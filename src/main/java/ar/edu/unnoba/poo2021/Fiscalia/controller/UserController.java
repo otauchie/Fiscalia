@@ -15,15 +15,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/new")
+    @GetMapping("/newUser")
     public String userNew(Model model){
         model.addAttribute("user",new User());
-        return "users/new";
+        return "users/newUser";
     }
 
     @PostMapping
     public String create(@ModelAttribute User user){
         userService.create(user);
-        return "redirect:/users/new";
+        return "redirect:/users/newUser";
     }
 }
