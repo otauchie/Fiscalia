@@ -1,25 +1,25 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 
+@Entity
+@Table(name = "Causas")
 public class Causa {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
-    private String numeroExpediente;
-
-
-    private String juzgado;
-
-
-
-    private List<Informacion> informaciones;
-
-
-    private String contexto;
+    @Column(name ="numero" )
+    private String numero;
+    @Column(name ="fecha" )
+    private Date fecha;
+    @Column(name = "victima")
+    private String victima;
+    @Column(name ="victimario" )
+    private String victimario;
+    @Column(name ="descripcion")
+    private String descripcion;
 
     public Long getId() {
         return id;
@@ -29,37 +29,43 @@ public class Causa {
         this.id = id;
     }
 
-    public String getNumeroExpediente() {
-        return numeroExpediente;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setNumeroExpediente(String numeroExpediente) {
-        this.numeroExpediente = numeroExpediente;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getJuzgado() {
-        return juzgado;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setJuzgado(String juzgado) {
-        this.juzgado = juzgado;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-
-
-    public List<Informacion> getInformaciones() {
-        return informaciones;
+    public String getVictima() {
+        return victima;
     }
 
-    public void setInformaciones(List<Informacion> informaciones) {
-        this.informaciones = informaciones;
+    public void setVictima(String victima) {
+        this.victima = victima;
     }
 
-    public String getContexto() {
-        return contexto;
+    public String getVictimario() {
+        return victimario;
     }
 
-    public void setContexto(String contexto) {
-        this.contexto = contexto;
+    public void setVictimario(String victimario) {
+        this.victimario = victimario;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
