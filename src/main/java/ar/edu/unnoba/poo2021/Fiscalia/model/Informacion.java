@@ -12,7 +12,27 @@ public abstract class Informacion {
     private Long id;
     private String DireccionIP;
     private Date FechaHora;
+    @ManyToOne
+    @JoinColumn(name = "causa_id")
+    private Causa causa;
 
+    private String descripcion;
+
+    public Causa getCausa() {
+        return causa;
+    }
+
+    public void setCausa(Causa causa) {
+        this.causa = causa;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public Long getId() {
         return id;

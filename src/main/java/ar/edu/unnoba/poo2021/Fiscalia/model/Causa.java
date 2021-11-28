@@ -2,6 +2,7 @@ package ar.edu.unnoba.poo2021.Fiscalia.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -20,6 +21,17 @@ public class Causa {
     private String victimario;
     @Column(name ="descripcion")
     private String descripcion;
+
+    @OneToMany(mappedBy = "causa")
+    private List<Informacion>informacion;
+
+    public List<Informacion> getInformacion() {
+        return informacion;
+    }
+
+    public void setInformacion(List<Informacion> informacion) {
+        this.informacion = informacion;
+    }
 
     public Long getId() {
         return id;
