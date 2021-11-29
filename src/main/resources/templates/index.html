@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
@@ -7,6 +7,8 @@
 <body>
 <h1>Hola pipol</h1>
 <h2>aca, testeando weas</h2>
-
+<h3><a th:href="@{/users/newUser}">Crear usuarios</a></h3>
+<h3><a th:href="@{/llamadas/newLlamada}">Crear llamada</a></h3>
+<h3><a th:href="@{/causas/newCausa}">Crear causa</a></h3>
 </body>
 </html>
