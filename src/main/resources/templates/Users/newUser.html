@@ -7,11 +7,20 @@
 <body>
     <div>Nuevo Usuario</div>
     <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <label> Usuario:</label><input type="text" th:field="*{userName}"/><br>
-        <label>Contraseña:</label><input type="password" th:field="*{password}"/><br>
-        <label>Nombre:</label><input type="text" th:field="*{nombre}"/><br>
-        <label>Apellido:</label><input type="text" th:field="*{apellido}"/><br>
-        <label>E-mail:</label><input type="text" th:field="*{email}"><br>
+        <label> Usuario:</label>
+        <input type="text" th:field="*{userName}"/><br>
+
+        <label>Contraseña:</label>
+        <input type="password" th:field="*{password}"/><br>
+
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}"/><br>
+
+        <label>Apellido:</label>
+        <input type="text" th:field="*{apellido}"/><br>
+
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}"><br>
         <button type="submit" name="newUser">Create</button>
     </form>
 </body>
