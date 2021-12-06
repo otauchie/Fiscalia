@@ -2,32 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Mas detealles</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Crear Usuario</title>
 </head>
 <body>
-    <div>Nuevo Usuario</div>
-    <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <label> Usuario:</label>
-        <input type="text" th:field="*{userName}"/><br>
+    <div class="container border gx-5">
+        <h1 >Users Details</h1>
+        <span class="d-block" th:text="${'Username: ' + user.userName}"></span>
+        <span class="d-block" th:text="${'Nombre: ' + user.nombre}"></span>
+        <span class="d-block" th:text="${'Apellido: ' + user.apellido}"></span>
+        <span class="d.block" th:text="${'Email: '+ user.email}"></span>
+        <h1><a class="link-info" th:href="@{/users/listaUsuarios}">Users List</a></h1>
+    </div>
 
-        <label>Contraseña:</label>
-        <input type="password" th:field="*{password}"/><br>
-
-        <label>Nombre:</label>
-        <input type="text" th:field="*{nombre}"/><br>
-
-        <label>Apellido:</label>
-        <input type="text" th:field="*{apellido}"/><br>
-
-        <label>E-mail:</label>
-        <input type="text" th:field="*{email}"><br>
-        <button type="submit" name="newUser">Create</button>
-
-        <h3><a class="link-info" th:href="@{/users/listaUsuarios}">Volver</a></h3>
-    </form>
 </body>
 </html>

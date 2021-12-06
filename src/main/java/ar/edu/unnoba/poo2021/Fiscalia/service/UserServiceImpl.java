@@ -29,9 +29,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return user  ;
     }
 
+
+
     @Override
     public User update(User user) {
-        return null;
+        User uDB = repository.findById(user.getId()).get();
+        uDB.setNombre(user.getNombre());
+        uDB.setApellido(user.getApellido());;
+        return repository.save(uDB);
     }
 
     @Override
@@ -41,6 +46,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void delete(User sessionUser, Long id) throws Exception {
+        if(sessionUser.getId().equals(id)){
+            throw new Exception("Un usuario no se puede borrar a si mismo");
+        }
+        repository.deleteById(id);
 
     }
 
