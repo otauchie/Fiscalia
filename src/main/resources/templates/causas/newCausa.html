@@ -2,20 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <title>Crear Causa</title>
+
 </head>
 <body>
-<div>Nueva Causa</div>
-<h1>kesta pasandaaaaa</h1>
-<!--
+<div class="container-fluid">
+<h1><div>Nueva Causa</div></h1>
+
     <form action="#" th:action="@{/causas}" th:object="${causa}" method="post">
-    <label> Usuario:</label><input type="text" th:field="*{userName}"/><br>
-    <label>Contraseña:</label><input type="password" th:field="*{password}"/><br>
-    <label>Nombre:</label><input type="text" th:field="*{nombre}"/><br>
-    <label>Apellido:</label><input type="text" th:field="*{apellido}"/><br>
-    <label>E-mail:</label><input type="text" th:field="*{email}"><br>
-    <button type="submit" name="newUser">Create</button>
--->
+    <label>Numero:</label><input type="text" th:field="*{numero}"/><br>
+    <label>Fecha:</label><input type=date  th:field="*{fecha}"/><br>
+    <label>victima:</label><input type="text" th:field="*{victima}"/><br>
+    <label>Victimario:</label><input type="text" th:field="*{victimario}"/><br>
+    <label>Descripcion:</label><input type="text" th:field="*{descripcion}"><br>
+    <button type="submit" class="btn btn-info" name="Crear causa">Crear</button>
+        <h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Volver</a></h3>
+</div>
+
 </form>
 </body>
 </html>

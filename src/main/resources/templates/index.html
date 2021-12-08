@@ -9,12 +9,15 @@
     <title>Inicio</title>
 </head>
 <body>
+<a style="text-align:right" class="btn btn-info"  th:href="@{/logout}">Logout</a>
+<div class="container border gx-5">
 <h1>Hola pipol</h1>
-<h3><a class="link-info" th:href="@{/logout}">Logout</a></h3>
-<h2>aca, testeando weas</h2>
-<h3><a class="link-info" th:href="@{/users/listaUsuarios}">lista usuarios</a></h3>
-<h3><a class="link-info" th:href="@{/llamadas/newLlamada}">Crear llamada</a></h3>
-<h3><a class="link-info" th:href="@{/causas/newCausa}">Crear causa</a></h3>
 
+
+
+<h2>aca, testeando weas</h2>
+<h3><a  class="btn btn-info" th:href="@{/users/listaUsuarios}">lista usuarios</a></h3>
+<h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Lista de causas</a></h3>
+</div>
 </body>
 </html>

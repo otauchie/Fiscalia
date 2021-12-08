@@ -10,13 +10,23 @@
 </head>
 <body>
     <div class="container border gx-5">
-        <h1 >Users Details</h1>
-        <span class="d-block" th:text="${'Username: ' + user.userName}"></span>
-        <span class="d-block" th:text="${'Nombre: ' + user.nombre}"></span>
-        <span class="d-block" th:text="${'Apellido: ' + user.apellido}"></span>
-        <span class="d.block" th:text="${'Email: '+ user.email}"></span>
-        <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Users List</a></h1>
+        <h1 >Informacion</h1>
+        <span class="d-block p-2 bg-primary text-white" th:text="${'Nº: ' + causa.numero}"></span>
+        <span class="d-block" th:text="${'Fecha: ' + causa.fecha}"></span>
+        <span class="d-block" th:text="${'Victima: ' + causa.victima}"></span>
+        <span class="d.block" th:text="${'Victimario: '+ causa.victimario}"></span>
+        <br>
+        <span class="d.block" th:text="${'Descripcion:'+ causa.descripcion}"></span>
+
+        <br>
+
+        <br>
+        <td><a class="btn btn-info" th:href="@{/causas/edit/{id}(id=${causa.id})}">Editar</a></td>
+        <br>
+        <br>
+        <a class="btn btn-info" th:href="@{/causas/listaCausas}">Volver</a>
     </div>
+
 
 </body>
 </html>
