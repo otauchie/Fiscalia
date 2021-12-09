@@ -27,7 +27,7 @@ public class LlamadaTelefonica extends Informacion {
         this.numeroReceptor = numeroReceptor;
     }
 
-    public long getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
