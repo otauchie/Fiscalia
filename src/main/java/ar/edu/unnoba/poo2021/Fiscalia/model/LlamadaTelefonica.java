@@ -9,7 +9,7 @@ public class LlamadaTelefonica extends Informacion {
 
     private String numeroLlamada;
     private String numeroReceptor;
-    private long duracion;
+    private Integer duracion;
 
     public String getNumeroLlamada() {
         return numeroLlamada;
@@ -31,7 +31,7 @@ public class LlamadaTelefonica extends Informacion {
         return duracion;
     }
 
-    public void setDuracion(long duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 }

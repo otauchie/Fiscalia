@@ -19,7 +19,8 @@
         <span class="d.block" th:text="${'Descripcion:'+ causa.descripcion}"></span>
 
         <br>
-
+        <h3><a  class="btn btn-info" th:href="@{/redesSociales/newRedSocial}">agregar red social</a></h3>
+        <h3><a  class="btn btn-info" th:href="@{/movimientosBancarios/newMoviminetoBancario}">agregar movimeinto bancario</a></h3>
         <br>
         <td><a class="btn btn-info" th:href="@{/causas/edit/{id}(id=${causa.id})}">Editar</a></td>
         <br>

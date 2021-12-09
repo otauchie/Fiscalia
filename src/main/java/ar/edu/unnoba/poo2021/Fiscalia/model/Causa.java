@@ -34,6 +34,10 @@ public class Causa {
     @OneToMany(mappedBy = "causa")
     private List<Informacion>informacion;
 
+    public Causa() {
+        this.fecha=new Date();
+    }
+
     public List<Informacion> getInformacion() {
         return informacion;
     }

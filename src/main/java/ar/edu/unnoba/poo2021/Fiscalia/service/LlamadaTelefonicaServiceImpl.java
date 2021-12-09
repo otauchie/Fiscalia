@@ -16,4 +16,10 @@ public class LlamadaTelefonicaServiceImpl implements LlamadaTelefonicaService{
             llamadaTelefonica = repository.save(llamadaTelefonica);
         return llamadaTelefonica;
     }
+
+    @Override
+    public LlamadaTelefonica getLlamadaTelefonica(Long id) {
+        return repository.findById(id).get();
+    }
+
 }

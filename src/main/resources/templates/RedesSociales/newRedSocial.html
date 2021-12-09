@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nueva red social</title>
+</head>
+<body>
+    <div>Nueva red social</div>
+    <form action="#" th:action="@{/redesSociales}" th:object="${redSocial}" method="post">
+        <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}"/><br>
+        <label>tipo:</label><input type="text" th:field="*{tipo}"/><br>
+        <label>perfil:</label><input type="text" th:field="*{perfil}"/><br>
+        <label>causa:</label><input type="text" th:field="*{causa}"/><br>
+        <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}"><br>
+        <label>descripcion</label><input type="text" th:field="*{descripcion}">
+
+        <button type="submit" name="newRedSocial">Crear</button>
+    </form>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
 import org.hibernate.annotations.GeneratorType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ public abstract class Informacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String DireccionIP;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date FechaHora;
     @ManyToOne
     @JoinColumn(name = "causa_id")
