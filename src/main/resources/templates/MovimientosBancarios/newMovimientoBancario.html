@@ -2,18 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Llamada</title>
+    <title>Crear Movimiento Bancario</title>
 </head>
 <body>
-    <div>Nueva Llamada</div>
-    <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
+    <div>Nuevo movimiento bancario</div>
+    <form action="#" th:action="@{/movimientosBancarios}" th:object="${movimiento}" method="post">
         <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}"/><br>
-        <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}"/><br>
-        <label>numnero receptor:</label><input type="text" th:field="*{numeroReceptor}"/><br>
-        <label>Duracion:</label><input type="text" th:field="*{duracion}"/><br>
-       <!-- <label>fecha</label><input type="date" th:field="*{FechaHora}"><br>-->
+        <label>Cuenta:</label><input type="text" th:field="*{cuenta}"/><br>
+        <label>Tipo de transacción:</label><input type="text" th:field="*{tipoTransaccion}"/><br>
+        <label>Monto:</label><input type="text" th:field="*{monto}"/><br>
+        <label>Moneda:</label><input type="text" th:field="*{moneda}"/><br>
+        <label>Datos de cajero:</label><input type="text" th:field="*{datosCajero}"/><br>
+        <label>Fecha</label><input type="date" th:field="*{FechaHora}"><br>
+        <label>Nro de causa:</label><input type="text" th:field="*{causa}"/><br>
+        <label>Descripción:</label><input type="text" th:field="*{descripcion}"/><br>
 
-        <button type="submit" name="newLlamadaTelefonica">Create</button>
+        <button type="submit" name="newMovimientoBancario">Create</button>
     </form>
 </body>
 </html>
