@@ -1,5 +1,8 @@
 package ar.edu.unnoba.poo2021.Fiscalia.model;
 
+import com.sun.istack.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -11,14 +14,20 @@ public class Causa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     @Column(name ="numero" )
     private String numero;
+    @NotNull
     @Column(name ="fecha" )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
+    @NotNull
     @Column(name = "victima")
     private String victima;
+    @NotNull
     @Column(name ="victimario" )
     private String victimario;
+    @NotNull
     @Column(name ="descripcion")
     private String descripcion;
 
