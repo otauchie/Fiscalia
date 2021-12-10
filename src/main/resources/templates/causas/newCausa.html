@@ -10,18 +10,20 @@
 </head>
 <body>
 <div class="container-fluid">
-<h1><div>Nueva Causa</div></h1>
+    <div class="container border gx-    5">
+        <h1><div>Nueva Causa</div></h1>
 
     <form action="#" th:action="@{/causas}" th:object="${causa}" method="post">
     <label>Numero:</label><input type="text" th:field="*{numero}"/><br>
-    <label>Fecha:</label><input type=datetime-local th:field="*{fecha}"/><br>
+
     <label>victima:</label><input type="text" th:field="*{victima}"/><br>
     <label>Victimario:</label><input type="text" th:field="*{victimario}"/><br>
     <label>Descripcion:</label><input type="text" th:field="*{descripcion}"><br>
     <button type="submit" class="btn btn-info" name="Crear causa">Crear</button>
         <h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Volver</a></h3>
-</div>
+   </div>
 
 </form>
+</div>
 </body>
 </html>
