@@ -16,7 +16,32 @@
         <span class="d-block" th:text="${'Victima: ' + causa.victima}"></span>
         <span class="d.block" th:text="${'Victimario: '+ causa.victimario}"></span>
         <br>
-        <span class="d.block" th:text="${'Descripcion:'+ causa.descripcion}"></span>
+        <span class="d.block" th:text="${'Descripcion: '+ causa.descripcion}"></span>
+        <br>
+
+        <table class="table table-bordered table-sm mt-2">
+            <thead>
+            <tr>
+                <th>Direccion IP</th>
+                <th> Fecha Hora</th>
+                <th> descripcion</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+             <tr th:each="info : ${causa.informacion}">
+                 <td th:text="${info.DireccionIP}"></td>
+                 <td th:text="${#dates.format(info.FechaHora, 'dd MMMM yyyy')}"></td>
+                    <td th:text="${info.descripcion}"></td>
+             </tr>
+            </tbody>
+        </table>
+
+
+        <!--<div th:each="info : ${causa.informacion}">
+            <span th:text="|${info.DireccionIP} - |"></span>
+        </div>-->
 
         <br>
         <h3><a  class="btn btn-info" th:href="@{/redesSociales/newRedSocial}">agregar red social</a></h3>

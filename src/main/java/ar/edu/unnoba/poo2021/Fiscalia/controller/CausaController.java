@@ -22,7 +22,8 @@ public class CausaController {
     @PostMapping
     public String create(@ModelAttribute Causa causa){
         causaService.create(causa);
-        return "redirect:/causas/newCausa";
+
+        return "redirect:/causas/listaCausas";
     }
     @GetMapping("/listaCausas")
     public String getCausas(Model model,
@@ -48,6 +49,7 @@ public class CausaController {
     @PostMapping("/update")
     public String update(@ModelAttribute Causa causa){
         causaService.update(causa);
-        return "redirect:/causas/listaCausas";
+
+        return "redirect:/causas/view/"+causa.getId();
     }
 }

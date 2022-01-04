@@ -26,6 +26,7 @@ and open the template in the editor.
             <th>Fecha</th>
             <th>Victima</th>
             <th>Victimario</th>
+
             <th></th>
 
         </tr>
@@ -36,6 +37,7 @@ and open the template in the editor.
             <td th:text="${causa.fecha}"></td>
             <td th:text="${causa.victima}"></td>
             <td th:text="${causa.victimario}"></td>
+
             <td><a th:href="@{/causas/view/{id}(id=${causa.id})}">Ver</a></td>
 
 
