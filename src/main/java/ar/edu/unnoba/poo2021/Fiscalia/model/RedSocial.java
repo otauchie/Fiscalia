@@ -9,6 +9,12 @@ public class RedSocial extends Informacion{
     private String tipo;
     private String perfil;
 
+    public RedSocial() {
+        this.setEsLlamada(false);
+        this.setEsMovimiento(false);
+        this.setEsRedSocial(true);
+    }
+
     public String getTipo() {
         return tipo;
     }

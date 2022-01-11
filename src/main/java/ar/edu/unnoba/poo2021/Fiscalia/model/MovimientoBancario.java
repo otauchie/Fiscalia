@@ -13,6 +13,11 @@ public class MovimientoBancario extends Informacion{
     private String moneda;
     private String datosCajero;
 
+    public MovimientoBancario() {
+        this.setEsLlamada(false);
+        this.setEsMovimiento(true);
+        this.setEsRedSocial(false);
+    }
 
     public String getCuenta() {
         return cuenta;

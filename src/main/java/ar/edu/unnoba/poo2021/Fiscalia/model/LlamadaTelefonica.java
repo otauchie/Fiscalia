@@ -11,6 +11,12 @@ public class LlamadaTelefonica extends Informacion {
     private String numeroReceptor;
     private Integer duracion;
 
+    public LlamadaTelefonica() {
+        this.setEsLlamada(true);
+        this.setEsMovimiento(false);
+        this.setEsRedSocial(false);
+    }
+
     public String getNumeroLlamada() {
         return numeroLlamada;
     }

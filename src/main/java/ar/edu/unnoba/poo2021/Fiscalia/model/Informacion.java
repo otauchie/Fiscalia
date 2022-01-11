@@ -20,6 +20,10 @@ public abstract class Informacion {
 
     private String descripcion;
 
+    private Boolean esLlamada;
+    private Boolean esMovimiento;
+    private Boolean esRedSocial;
+
     public Causa getCausa() {
         return causa;
     }
@@ -58,5 +62,29 @@ public abstract class Informacion {
 
     public void setFechaHora(Date fechaHora) {
         FechaHora = fechaHora;
+    }
+
+    public Boolean getEsLlamada() {
+        return esLlamada;
+    }
+
+    public void setEsLlamada(Boolean esLlamada) {
+        this.esLlamada = esLlamada;
+    }
+
+    public Boolean getEsMovimiento() {
+        return esMovimiento;
+    }
+
+    public void setEsMovimiento(Boolean esMovimiento) {
+        this.esMovimiento = esMovimiento;
+    }
+
+    public Boolean getEsRedSocial() {
+        return esRedSocial;
+    }
+
+    public void setEsRedSocial(Boolean esRedSocial) {
+        this.esRedSocial = esRedSocial;
     }
 }
