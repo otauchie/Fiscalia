@@ -8,6 +8,7 @@
     <div>Nuevo movimiento bancario</div>
     <form action="#" th:action="@{/movimientosBancarios}" th:object="${movimiento}" method="post">
         <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}"/><br>
+        <label>Usuario:</label><input type="text" th:field="*{usuario}"><br>
         <label>Cuenta:</label><input type="text" th:field="*{cuenta}"/><br>
         <label>Tipo de transacción:</label><input type="text" th:field="*{tipoTransaccion}"/><br>
         <label>Monto:</label><input type="text" th:field="*{monto}"/><br>

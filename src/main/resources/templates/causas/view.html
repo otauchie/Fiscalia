@@ -19,22 +19,95 @@
         <span class="d.block" th:text="${'Descripcion: '+ causa.descripcion}"></span>
         <br>
 
+        <h2> Llamadas</h2>
         <table class="table table-bordered table-sm mt-2">
             <thead>
             <tr>
                 <th>Direccion IP</th>
                 <th> Fecha Hora</th>
-                <th> descripcion</th>
+                <th> Descripcion</th>
+                <th> Nº Llamada</th>
+                <th> Nº Receptor</th>
+                <th> Duracion (min)</th>
 
             </tr>
             </thead>
             <tbody>
 
              <tr th:each="info : ${causa.informacion}">
-                 <td th:text="${info.DireccionIP}"></td>
-                 <td th:text="${#dates.format(info.FechaHora, 'dd MMMM yyyy')}"></td>
-                    <td th:text="${info.descripcion}"></td>
+                 <div th:if="${info.esLlamada==true}">
+                     <td th:text="${info.DireccionIP}"></td>
+                     <td th:text="${#dates.format(info.FechaHora, 'dd/MM/yyyy')}"></td>
+                     <td th:text="${info.descripcion}"></td>
+                     <td th:text="${info.numeroLlamada}"></td>
+                     <td th:text="${info.numeroReceptor}"></td>
+                     <td th:text="${info.duracion}"></td>
+                 </div>
              </tr>
+            </tbody>
+        </table>
+
+        <h2>Movimientos Bancarios</h2>
+        <table class="table table-bordered table-sm mt-2">
+            <thead>
+            <tr>
+                <th>Direccion IP</th>
+                <th> Fecha Hora</th>
+                <th> Descripcion</th>
+                <th> Nº Cuenta</th>
+                <th> Usuario</th>
+                <th> Tipo de transaccion</th>
+                <th> Monto</th>
+                <th> Moneda</th>
+                <th> Datos de cajero</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="info : ${causa.informacion}">
+                <div  th:if="${info.esMovimiento==true}">
+                    <td th:text="${info.DireccionIP}"></td>
+                    <td th:text="${#dates.format(info.FechaHora, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${info.descripcion}"></td>
+                    <td th:text="${info.cuenta}"></td>
+                    <td th:text="${info.usuario}"></td>
+                    <td th:text="${info.tipoTransaccion}"></td>
+                    <td th:text="${info.monto}"></td>
+                    <td th:text="${info.moneda}"></td>
+                    <td th:text="${info.datosCajero}"></td>
+                </div>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2> Redes Sociales</h2>
+        <table class="table table-bordered table-sm mt-2">
+            <thead>
+            <tr>
+                <th>Direccion IP</th>
+                <th> Fecha Hora</th>
+                <th> Descripcion</th>
+                <th> Tipo</th>
+                <th> Perfil</th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="info : ${causa.informacion}" >
+                <div th:if="${info.esRedSocial==true}">
+                    <td th:text="${info.DireccionIP}"></td>
+                    <td th:text="${#dates.format(info.FechaHora, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${info.descripcion}"></td>
+                    <td th:text="${info.tipo}"></td>
+                    <td th:text="${info.perfil}"></td>
+                </div>
+
+            </tr>
             </tbody>
         </table>
 
