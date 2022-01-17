@@ -17,7 +17,7 @@ public class MovimientoBancarioController {
     @Autowired
     private MovimientoBancarioService movimientoBancarioService;
 
-    @GetMapping("/newMovimientoBancario")
+    @GetMapping("/newMovimientoBancario/{id}")
     public String newMovimiento(Model model){
         model.addAttribute("movimiento",new MovimientoBancario());
         return "movimientosBancarios/newMovimientoBancario";
@@ -26,6 +26,6 @@ public class MovimientoBancarioController {
     @PostMapping
     public String create(@ModelAttribute MovimientoBancario movimientoBancario){
         movimientoBancarioService.create(movimientoBancario);
-        return "redirect:/movimientosBancarios/newMovimientoBancario";
+        return "redirect:/causas/view/"+movimientoBancario.getCausa().getId();
     }
 }

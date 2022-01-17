@@ -10,13 +10,13 @@
 <body>
     <div>Nueva Llamada</div>
     <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
-        <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}"/><br>
-        <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}"/><br>
-        <label>numnero receptor:</label><input type="text" th:field="*{numeroReceptor}"/><br>
-        <label>Duración:</label><input type="text" th:field="*{duracion}"/><br>
-        <label>Causa:</label><input type="text" th:field="*{causa}"/><br>
-        <label>Descripción:</label><input type="text" th:field="*{descripcion}"/><br>
-        <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}"><br>
+        <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
+        <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}" required/><br>
+        <label>numnero receptor:</label><input type="text" th:field="*{numeroReceptor}" required/><br>
+        <label>Duración:</label><input type="text" th:field="*{duracion}" required/><br>
+        <label>Causa:</label><input type="text" th:field="*{causa}" required/><br>
+        <label>Descripción:</label><input type="text" th:field="*{descripcion}" required/><br>
+        <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}" required><br>
 
         <button type="submit" name="newLlamadaTelefonica">Create</button>
     </form>
