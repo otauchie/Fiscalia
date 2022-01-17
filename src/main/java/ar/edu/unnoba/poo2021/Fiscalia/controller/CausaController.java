@@ -31,7 +31,8 @@ public class CausaController {
         if(errorMessage!=null){
             model.addAttribute("error",errorMessage);
         }
-        model.addAttribute("causas",causaService.getCausas());
+        model.addAttribute("causas",causaService.causasPorFecha());
+
         return "causas/listaCausas";
     }
     @GetMapping("/view/{id}")

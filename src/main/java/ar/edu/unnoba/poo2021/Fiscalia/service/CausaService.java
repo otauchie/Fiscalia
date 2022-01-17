@@ -10,4 +10,5 @@ public interface CausaService {
     public Causa update(Causa causa);
     public Causa getCausa(Long id);
     public List<Causa> getCausas();
+    public List<Causa> causasPorFecha();
 }

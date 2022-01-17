@@ -22,7 +22,7 @@ and open the template in the editor.
     <table class="table table-bordered table-sm mt-2">
         <thead>
         <tr>
-            <th>Username</th>
+            <th>mail</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th></th>
@@ -32,7 +32,7 @@ and open the template in the editor.
         </thead>
         <tbody>
         <tr th:each="user : ${users}">
-            <td th:text="${user.userName}"></td>
+            <td th:text="${user.email}"></td>
             <td th:text="${user.nombre}"></td>
             <td th:text="${user.apellido}"></td>
                 <td><a th:href="@{/users/view/{id}(id=${user.id})}">Ver</a></td>

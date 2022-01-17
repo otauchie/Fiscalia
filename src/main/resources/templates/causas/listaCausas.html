@@ -22,8 +22,8 @@ and open the template in the editor.
     <table class="table table-bordered table-sm mt-2">
         <thead>
         <tr>
-            <th>Nº</th>
             <th>Fecha</th>
+            <th>Nº</th>
             <th>Victima</th>
             <th>Victimario</th>
 
@@ -32,9 +32,9 @@ and open the template in the editor.
         </tr>
         </thead>
         <tbody>
-        <tr th:each="causa : ${causas}">
-            <td th:text="${causa.numero}"></td>
+        <tr th:each="causa : ${causas}" >
             <td th:text="${causa.fecha}"></td>
+            <td th:text="${causa.numero}"></td>
             <td th:text="${causa.victima}"></td>
             <td th:text="${causa.victimario}"></td>
 

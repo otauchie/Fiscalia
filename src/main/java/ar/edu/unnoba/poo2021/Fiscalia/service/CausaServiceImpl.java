@@ -35,4 +35,6 @@ public class CausaServiceImpl implements CausaService{
     public List<Causa> getCausas() {
         return repository.findAll();
     }
+
+    public List<Causa> causasPorFecha(){ return repository.ordenarCausas();}
 }
