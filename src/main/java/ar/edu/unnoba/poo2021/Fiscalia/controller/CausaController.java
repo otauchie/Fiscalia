@@ -23,7 +23,7 @@ public class CausaController {
     public String create(@ModelAttribute Causa causa){
         causaService.create(causa);
 
-        return "redirect:/causas/listaCausas";
+        return "redirect:/causas/view/"+causa.getId();
     }
     @GetMapping("/listaCausas")
     public String getCausas(Model model,
@@ -51,6 +51,13 @@ public class CausaController {
     public String update(@ModelAttribute Causa causa){
         causaService.update(causa);
 
-        return "redirect:/causas/view/"+causa.getId();
+        return "redirect:/causas/cleanView/"+causa.getId();
+    }
+
+    @GetMapping("/cleanView/{id}")
+    public String causaCleanView(@PathVariable("id") Long causaId, Model model){
+        Causa causa = causaService.getCausa(causaId);
+        model.addAttribute("causa",causa);
+        return "causas/cleanView";
     }
 }

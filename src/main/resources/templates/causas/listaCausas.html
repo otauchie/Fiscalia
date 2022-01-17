@@ -33,12 +33,12 @@ and open the template in the editor.
         </thead>
         <tbody>
         <tr th:each="causa : ${causas}" >
-            <td th:text="${causa.fecha}"></td>
+            <td th:text="${#dates.format(causa.fecha, 'dd/MM/yyyy')}"></td>
             <td th:text="${causa.numero}"></td>
             <td th:text="${causa.victima}"></td>
             <td th:text="${causa.victimario}"></td>
 
-            <td><a th:href="@{/causas/view/{id}(id=${causa.id})}">Ver</a></td>
+            <td><a th:href="@{/causas/cleanView/{id}(id=${causa.id})}">Ver</a></td>
 
 
         </tr>
