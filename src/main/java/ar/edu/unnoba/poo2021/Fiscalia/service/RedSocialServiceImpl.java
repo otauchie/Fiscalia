@@ -21,4 +21,9 @@ public class RedSocialServiceImpl implements RedSocialService {
     public RedSocial getRedSocial(Long id) {
         return repository.findById(id).get();
     }
+
+    @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }

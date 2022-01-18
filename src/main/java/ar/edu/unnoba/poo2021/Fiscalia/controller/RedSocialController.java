@@ -25,4 +25,10 @@ public class RedSocialController {
         redSocialService.create(redSocial);
         return "redirect:/causas/view/"+redSocial.getCausa().getId();
     }
+    @GetMapping("/delete/{id}")
+    public String redSocialDelete(@PathVariable("id") Long id){
+        Long idDireccion=redSocialService.getRedSocial(id).getCausa().getId();
+        redSocialService.delete(id);
+        return "redirect:/causas/view/"+idDireccion;
+    }
 }

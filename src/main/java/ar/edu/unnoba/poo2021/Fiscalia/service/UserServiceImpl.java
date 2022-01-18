@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public User update(User user) {
         User uDB = repository.findById(user.getId()).get();
         uDB.setNombre(user.getNombre());
-        uDB.setApellido(user.getApellido());;
+    uDB.setApellido(user.getApellido());;
         return repository.save(uDB);
     }
 

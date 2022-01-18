@@ -6,10 +6,7 @@ import ar.edu.unnoba.poo2021.Fiscalia.service.MovimientoBancarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/movimientosBancarios")
@@ -27,5 +24,12 @@ public class MovimientoBancarioController {
     public String create(@ModelAttribute MovimientoBancario movimientoBancario){
         movimientoBancarioService.create(movimientoBancario);
         return "redirect:/causas/view/"+movimientoBancario.getCausa().getId();
+    }
+
+    @GetMapping("/delete/{id}")
+    public String movimientoDelete(@PathVariable("id") Long id){
+        Long idMovimiento=movimientoBancarioService.getMovimientoBancario(id).getCausa().getId();
+        movimientoBancarioService.delete(id);
+        return "redirect:/causas/view/"+idMovimiento;
     }
 }

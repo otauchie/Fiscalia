@@ -21,4 +21,9 @@ public class MovimientoBancarioServiceImpl implements MovimientoBancarioService 
     public MovimientoBancario getMovimientoBancario(Long id) {
         return repository.findById(id).get();
     }
+
+    @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }
