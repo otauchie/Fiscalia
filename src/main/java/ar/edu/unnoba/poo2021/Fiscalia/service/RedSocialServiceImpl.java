@@ -12,7 +12,6 @@ public class RedSocialServiceImpl implements RedSocialService {
 
     @Override
     public RedSocial create(RedSocial redSocial) {
-        if (repository.findByPerfil(redSocial.getPerfil())==null)
             redSocial = repository.save(redSocial);
         return redSocial;
     }

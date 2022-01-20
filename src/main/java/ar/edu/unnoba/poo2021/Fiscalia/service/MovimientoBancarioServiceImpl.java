@@ -11,8 +11,6 @@ public class MovimientoBancarioServiceImpl implements MovimientoBancarioService 
     private MovimientoBancarioRepository repository;
     @Override
     public MovimientoBancario create(MovimientoBancario movimientoBancario) {
-
-        if(repository.findByCuenta(movimientoBancario.getCuenta())==null)
             movimientoBancario = repository.save(movimientoBancario);
         return movimientoBancario;
     }
