@@ -8,19 +8,20 @@
     <title>Crear Llamada</title>
 </head>
 <body>
+    <div th:object="${causa}"th:with="causaID=${causa.id}">
+
     <div>Nueva Llamada</div>
     <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
         <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
         <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}" required/><br>
         <label>numnero receptor:</label><input type="text" th:field="*{numeroReceptor}" required/><br>
         <label>Duración:</label><input type="text" th:field="*{duracion}" required/><br>
-        <label>NºCausa:</label><input type="text" th:field="*{causa}" required/><br>
         <label>Descripción:</label><input type="text" th:field="*{descripcion}" required/><br>
         <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}" required><br>
-
+       <!-- <label>Nro de causa:</label><input type="text" th:field="*{causa}" th:placeholder="${causaID}" /><br>-->
         <button type="submit" name="newLlamadaTelefonica">Create</button>
     </form>
-
+    </div>
 
 </body>
 </html>
