@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Causa {
     private Long id;
     @NotNull
     @Column(name ="numero" )
+    @Pattern(regexp = "^[P]{2}+[-]+[0-9]{2}+[-]+[0-9]{2}+[-]+[0-9]{6}+[-]+[0-9]{2}+[/]+[0]{2}$",message = "el formato del codigo debe de ser de la forma 'PP-00-00-000000-00/00' ")
     private String numero;
     @NotNull
     @Column(name ="fecha" )
