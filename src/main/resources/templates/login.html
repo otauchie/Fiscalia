@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,20 +10,34 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
+
+
 <body>
-<div class="container">
-  <form class="form-signin" method="post" action="login">
-    <h2 class="form-signin-heading">Fiscalia APP</h2>
-    <p>
-      <label for="username" class="sr-only">Username</label>
-      <input type="text" id="username" name="username" class="form-control" placeholder="E-mail" required autofocus>
-    </p>
-    <p>
-      <label for="password" class="sr-only">Password</label>
-      <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
-    </p>
-    <input name="_csrf" type="hidden" value="a993cd70-ef12-455a-9d6b-ce0170f32cf0" />
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesion</button>
-  </form>
+<section class="vh-100" style="background-color: #5bc0de;">
+  <div class="container py-5 h-100">
+   <div class="row d-flex justify-content-center align-items-center h-100">
+     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+       <div class="card shadow-2-strong" style="border-radius: 1rem;">
+         <div class="card-body p-5 text-center" >
+        <form class="form-signin" method="post" th:action="@{/login}">
+          <h2 class="form-signin-heading">Fiscalia APP</h2>
+          <p>
+           <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="E-mail" required autofocus>
+         </p>
+          <p>
+            <label for="password" class="sr-only">Password</label>
+           <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+         </p>
+         <input name="_csrf" type="hidden" value="a993cd70-ef12-455a-9d6b-ce0170f32cf0" />
+          <button class="btn btn-lg btn-info btn-block" type="submit">Iniciar Sesion</button>
+       </form>
+           <div>
+       </div>
+     </div>
+   </div>
 </div>
-</body></html>
+</section>
+</body>
+
+</html>
