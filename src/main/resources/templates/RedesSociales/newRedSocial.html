@@ -7,19 +7,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <title>nueva red social</title>
+    <title>Nueva red social</title>
 </head>
 <body>
-    <div>Nueva red social</div>
-    <form action="#" th:action="@{/redesSociales}" th:object="${redSocial}" method="post">
-        <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
-        <label>tipo:</label><input type="text" th:field="*{tipo}" required/><br>
-        <label>perfil:</label><input type="text" th:field="*{perfil}" required/><br>
-        <label>Nºcausa:</label><input type="text" th:field="*{causa}" required/><br>
-        <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}" required/><br>
-        <label>descripcion</label><input type="text" th:field="*{descripcion}" required/>
+<div class="container py-5 h-100">
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center" >
+            <div><h3>Nueva red social</h3></div>
+        <form action="#" th:action="@{/redesSociales}" th:object="${redSocial}" method="post">
+            <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
+            <label>tipo:</label><input type="text" th:field="*{tipo}" required/><br>
+            <label>perfil:</label><input type="text" th:field="*{perfil}" required/><br>
+        <!--<label>Nºcausa:</label><input type="text" th:field="*{causa}" required/><br>-->
+            <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}" required/><br>
+            <label>descripcion</label><input type="text" th:field="*{descripcion}" required/>
 
-        <button type="submit" name="newRedSocial">Crear</button>
-    </form>
+            <button type="submit" name="newRedSocial">Crear</button>
+        </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

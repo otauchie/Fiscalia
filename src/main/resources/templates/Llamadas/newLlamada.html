@@ -10,9 +10,12 @@
     <title>Crear Llamada</title>
 </head>
 <body>
+<div class="container py-5 h-100">
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center" >
     <div th:object="${causa}"th:with="causaID=${causa.id}">
 
-    <div>Nueva Llamada</div>
+        <div><h3>Nueva Llamada</h3></div>
     <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
         <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
         <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}" required/><br>
@@ -24,6 +27,9 @@
         <button type="submit" name="newLlamadaTelefonica">Create</button>
     </form>
     </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

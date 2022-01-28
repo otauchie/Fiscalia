@@ -10,7 +10,10 @@
     <title>Crear Movimiento Bancario</title>
 </head>
 <body>
-    <div>Nuevo movimiento bancario</div>
+<div class="container py-5 h-100">
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center" >
+            <div><h3>Nuevo movimiento bancario</h3></div>
     <form action="#" th:action="@{/movimientosBancarios}" th:object="${movimiento}" method="post">
         <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
         <label>Usuario:</label><input type="text" th:field="*{usuario}" required/><br>
@@ -20,10 +23,13 @@
         <label>Moneda:</label><input type="text" th:field="*{moneda}" required/><br>
         <label>Datos de cajero:</label><input type="text" th:field="*{datosCajero}" required/><br>
         <label>Fecha</label><input type="date" th:field="*{FechaHora}" required/><br>
-        <label>Nro de causa:</label><input type="text" th:field="*{causa}" required/><br>
+       <!-- <label>Nro de causa:</label><input type="text" th:field="*{causa}" required/><br>-->
         <label>Descripción:</label><input type="text" th:field="*{descripcion}" required/><br>
 
         <button type="submit" name="newMovimientoBancario">Create</button>
     </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
