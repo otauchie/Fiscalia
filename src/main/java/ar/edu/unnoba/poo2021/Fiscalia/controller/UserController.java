@@ -23,7 +23,7 @@ public class UserController {
     @PostMapping
     public String create(@ModelAttribute User user){
         userService.create(user);
-        return "redirect:/users/newUser";
+        return "redirect:/users/listaUsuarios";
     }
 
 

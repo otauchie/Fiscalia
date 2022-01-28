@@ -10,14 +10,13 @@
     <title>Crear Usuario</title>
 </head>
 <body>
-    <div>Nuevo Usuario</div>
+<div class="container py-5 h-100">
+
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center" >
+
     <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <label> Usuario:</label>
-        <input type="text" th:field="*{userName}"required/><br>
-
-        <label>Contraseña:</label>
-        <input type="password" th:field="*{password}"required/><br>
-
+        <div><h3>Nuevo Usuario</h3></div>
         <label>Nombre:</label>
         <input type="text" th:field="*{nombre}" required/><br>
 
@@ -26,9 +25,18 @@
 
         <label>E-mail:</label>
         <input type="email" th:field="*{email}" required><br>
-        <button type="submit" name="newUser">Create</button>
 
+        <label>Contraseña:</label>
+        <input type="password" th:field="*{password}"required/><br>
+
+        <button class="btn btn-info" type="submit" name="newUser">Create</button>
         <h3><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Volver</a></h3>
+
     </form>
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>

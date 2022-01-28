@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public User create(User user) {
-        if(repository.findByUserName(user.getUsername())==null)
+        if(repository.findByEmail(user.getUsername())==null)
             //encripta la contraseña
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
             //guarda el usuario

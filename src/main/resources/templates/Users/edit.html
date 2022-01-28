@@ -12,20 +12,20 @@
 </head>
 <body>
     <div class="container border gx-    5">
-        <h1 >Users Edit</h1>
+        <h1 >Modificar Usuario</h1>
         <form action="#" th:action="@{/users/update}" th:object="${user}" method="post">
-            <h2 th:text="${user.userName}"></h2>
+
             <input type="hidden" th:value="${user.id}" th:attr="name='id'"/>
             <div class="form-group">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre:</label>
                 <input id="nombre" type="text" th:field="*{nombre}"/>
             </div>
             <div class="form-group">
-                <label for="apellido">Apellido</label>
+                <label for="apellido">Apellido:</label>
                 <input id="apellido" type="text" th:field="*{apellido}"/>
             </div>
-            <button type="submit" class="btn btn-primary" name="newUser">Update</button>
-            <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Users List</a></h1>
+            <button type="submit" class="btn btn-primary" name="newUser">Modificar</button>
+            <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Lista Usuarios</a></h1>
         </form>
     </div>
 
