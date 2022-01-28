@@ -11,9 +11,11 @@
     <title>Crear Causa</title>
 
 </head>
-<body>
-<div class="container-fluid">
-    <div class="container border gx-    5">
+<body style="background-color: 	#333333">
+<div class="container py-5 h-100">
+
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center" >
         <h1><div>Nueva Causa</div></h1>
 
     <form action="#" th:action="@{/causas}" th:object="${causa}" method="post">
@@ -25,9 +27,10 @@
     <label>Descripcion:</label><input type="text" th:field="*{descripcion}" required/><br>
     <button type="submit" class="btn btn-info" name="Crear causa">Crear</button>
         <h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Volver</a></h3>
+    </form>
    </div>
-
-</form>
+    </div>
 </div>
+
 </body>
 </html>

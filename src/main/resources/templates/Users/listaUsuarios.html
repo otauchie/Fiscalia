@@ -17,7 +17,7 @@ and open the template in the editor.
 
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-info ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
     <a class="navbar-brand" th:href="@{/}">Home</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -25,11 +25,14 @@ and open the template in the editor.
             <li class="nav-item active">
                 <a class="nav-link"  th:href="@{/causas/listaCausas}">lista Causas</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/users/newUser}">Crear Usuario</a>
+            </li>
 
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-info" th:href="@{/logout}">Logout</a>
+            <a class="btn btn-outline-info" th:href="@{/logout}">Logout</a>
         </form>
     </div>
 </nav>
@@ -61,7 +64,7 @@ and open the template in the editor.
         </tr>
         </tbody>
     </table>
-    <a class="btn btn-info" th:href="@{/users/newUser}">Crear Usuario</a>
+
 </div>
 
 

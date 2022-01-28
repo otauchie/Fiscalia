@@ -9,14 +9,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    <div class="container border gx-5">
-        <h1 >Users Details</h1>
+<body style="background-color: 	#333333">
+<div class="card shadow-8   -strong" style="border-radius: 4rem;">
+    <div class="container p-5 h-100">
+
+        <h1 >Informacion de Usuario</h1>
         <span class="d-block" th:text="${'Nombre: ' + user.nombre}"></span>
         <span class="d-block" th:text="${'Apellido: ' + user.apellido}"></span>
         <span class="d.block" th:text="${'Email: '+ user.email}"></span>
         <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Volver</a></h1>
+
     </div>
+</div>
 
 </body>
 </html>

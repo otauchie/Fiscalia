@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     @RequestMapping("/")
     public String Index(){
-        return "index";
+        return "redirect:causas/listaCausas";
     }
 }
