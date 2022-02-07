@@ -6,7 +6,10 @@ import ar.edu.unnoba.poo2021.Fiscalia.service.CausaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/causas")
@@ -20,8 +23,19 @@ public class CausaController {
         return "causas/newCausa";
     }
     @PostMapping
-    public String create(@ModelAttribute Causa causa){
-        causaService.create(causa);
+    public String create(@Valid @ModelAttribute("causa") Causa causa, BindingResult result, Model model){
+        if (result.hasErrors()) {
+            model.addAttribute("causa",causa);
+            return "causas/newCausa";
+        }
+        try {
+            causaService.create(causa);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            model.addAttribute("formError", e.getMessage());
+            model.addAttribute("causa", causa);
+            return "causas/newCausa";
+        }
 
         return "redirect:/causas/view/"+causa.getId();
     }
@@ -59,5 +73,18 @@ public class CausaController {
         Causa causa = causaService.getCausa(causaId);
         model.addAttribute("causa",causa);
         return "causas/cleanView";
+    }
+
+    @GetMapping("/editNew/{id}")
+    public String causaEditNew(@PathVariable("id") Long causaId, Model model){
+        Causa causa = causaService.getCausa(causaId);
+        model.addAttribute("causa",causa);
+        return "causas/editNew";
+    }
+    @PostMapping("/updateNew")
+    public String updateNew(@ModelAttribute Causa causa){
+        causaService.update(causa);
+
+        return "redirect:/causas/view/"+causa.getId();
     }
 }

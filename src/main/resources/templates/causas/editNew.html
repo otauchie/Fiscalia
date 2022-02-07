@@ -2,43 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Editar causa</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <title>Crear Usuario</title>
 </head>
-<body style="background-color: 	#333333">
-<div class="container py-5 h-100">
+<body>
+    <div class="container border gx-    5">
+        <h1 >Editar Causa</h1>
+        <form action="#" th:action="@{/causas/updateNew}" th:object="${causa}" method="post">
+            <h2 th:text="${causa.numero}"></h2>
+            <input type="hidden" th:value="${causa.id}" th:attr="name='id'"/>
+            <div class="form-group">
+                <label for="descripcion">descripcion</label>
+                <input id="descripcion" type="text" th:field="*{descripcion}"/>
+            </div>
 
-    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
-        <div class="card-body p-5 text-center" >
-
-    <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <div><h3>Nuevo Usuario</h3></div>
-        <label>Nombre:</label>
-        <input type="text" th:field="*{nombre}" required/><br>
-
-        <label>Apellido:</label>
-        <input type="text" th:field="*{apellido}" required/><br>
-
-
-        <label>E-mail:</label>
-        <input type="email" th:field="*{email}" required><br>
-
-        <label>Contraseña:</label>
-
-        <input type="password" th:field="*{password}"required/><br>
-
-        <button class="btn btn-info" type="submit" name="newUser">Create</button>
-        <h3><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Volver</a></h3>
-
-    </form>
-        </div>
-
+            <button type="submit" class="btn btn-primary" name="newCausa">Update</button>
+            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
+        </form>
     </div>
 
-</div>
 </body>
 </html>
