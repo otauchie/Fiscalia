@@ -1,5 +1,6 @@
 package ar.edu.unnoba.poo2021.Fiscalia.controller;
 
+import ar.edu.unnoba.poo2021.Fiscalia.model.Causa;
 import ar.edu.unnoba.poo2021.Fiscalia.model.RedSocial;
 import ar.edu.unnoba.poo2021.Fiscalia.model.User;
 import ar.edu.unnoba.poo2021.Fiscalia.service.CausaService;
@@ -17,26 +18,18 @@ public class RedSocialController {
     @Autowired
     private CausaService causaService;
 
-    private Long causaID;
-
-    public Long getCausaID() {
-        return causaID;
-    }
-
-    public void setCausaID(Long causaID) {
-        this.causaID = causaID;
-    }
 
     @GetMapping("/newRedSocial/{id}")
     public String newRedSocial(@PathVariable("id") Long id, Model model){
-        setCausaID(id);
-        model.addAttribute("redSocial",new RedSocial());
+        Causa causa=causaService.getCausa(id);
+        RedSocial redSocial= new RedSocial();
+        redSocial.setCausa(causa);
+        model.addAttribute("redSocial",redSocial);
         return "redesSociales/newRedSocial";
     }
 
     @PostMapping
     public String create(@ModelAttribute RedSocial redSocial){
-        redSocial.setCausa(causaService.getCausa(causaID));
         redSocialService.create(redSocial);
         return "redirect:/causas/view/"+redSocial.getCausa().getId();
     }

@@ -1,5 +1,6 @@
 package ar.edu.unnoba.poo2021.Fiscalia.controller;
 
+import ar.edu.unnoba.poo2021.Fiscalia.model.Causa;
 import ar.edu.unnoba.poo2021.Fiscalia.model.MovimientoBancario;
 import ar.edu.unnoba.poo2021.Fiscalia.model.User;
 import ar.edu.unnoba.poo2021.Fiscalia.service.CausaService;
@@ -17,26 +18,19 @@ public class MovimientoBancarioController {
     @Autowired
     private CausaService causaService;
 
-    private Long causaID;
 
-    public Long getCausaID() {
-        return causaID;
-    }
-
-    public void setCausaID(Long causaID) {
-        this.causaID = causaID;
-    }
 
     @GetMapping("/newMovimientoBancario/{id}")
     public String newMovimiento(@PathVariable("id")Long id, Model model){
-        setCausaID(id);
-        model.addAttribute("movimiento",new MovimientoBancario());
+        Causa causa=causaService.getCausa(id);
+        MovimientoBancario movimientoBancario= new MovimientoBancario();
+        movimientoBancario.setCausa(causa);
+        model.addAttribute("movimiento",movimientoBancario);
         return "movimientosBancarios/newMovimientoBancario";
     }
 
     @PostMapping
     public String create(@ModelAttribute MovimientoBancario movimientoBancario){
-        movimientoBancario.setCausa(causaService.getCausa(causaID));
         movimientoBancarioService.create(movimientoBancario);
         return "redirect:/causas/view/"+movimientoBancario.getCausa().getId();
     }

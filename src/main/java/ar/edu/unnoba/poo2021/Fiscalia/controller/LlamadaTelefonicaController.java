@@ -20,20 +20,21 @@ public class LlamadaTelefonicaController {
     @Autowired
     private CausaService causaService;
 
-    private Long causaID;
+
 
     @GetMapping("/newLlamada/{id}")
     public String LlamadaTelefonicaNew( @PathVariable("id") Long id, Model model, Model modelCausa){
-        setCausaID(id);
         Causa causa=causaService.getCausa(id);
-        model.addAttribute("llamadaTelefonica",new LlamadaTelefonica());
-        modelCausa.addAttribute("causa",causa);
+        LlamadaTelefonica llamadaTelefonica= new LlamadaTelefonica();
+        llamadaTelefonica.setCausa(causa);
+        model.addAttribute("llamadaTelefonica",llamadaTelefonica);
+
         return "llamadas/newLlamada";
     }
 
     @PostMapping
-    public String create(@ModelAttribute LlamadaTelefonica llamadaTelefonica){
-        llamadaTelefonica.setCausa(causaService.getCausa(causaID));
+    public String create(@ModelAttribute("llamadaTelefonica") LlamadaTelefonica llamadaTelefonica){
+
       llamadaTelefonicaService.create(llamadaTelefonica);
         return "redirect:/causas/view/"+llamadaTelefonica.getCausa().getId();
     }
@@ -58,11 +59,5 @@ public class LlamadaTelefonicaController {
         return "redirect:/causas/view/"+idDireccion;
     }
 
-    public Long getCausaID() {
-        return causaID;
-    }
 
-    public void setCausaID(Long causaID) {
-        this.causaID = causaID;
-    }
 }
