@@ -65,26 +65,8 @@ public class CausaController {
     public String update(@ModelAttribute Causa causa){
         causaService.update(causa);
 
-        return "redirect:/causas/cleanView/"+causa.getId();
-    }
-
-    @GetMapping("/cleanView/{id}")
-    public String causaCleanView(@PathVariable("id") Long causaId, Model model){
-        Causa causa = causaService.getCausa(causaId);
-        model.addAttribute("causa",causa);
-        return "causas/cleanView";
-    }
-
-    @GetMapping("/editNew/{id}")
-    public String causaEditNew(@PathVariable("id") Long causaId, Model model){
-        Causa causa = causaService.getCausa(causaId);
-        model.addAttribute("causa",causa);
-        return "causas/editNew";
-    }
-    @PostMapping("/updateNew")
-    public String updateNew(@ModelAttribute Causa causa){
-        causaService.update(causa);
-
         return "redirect:/causas/view/"+causa.getId();
     }
+
+
 }

@@ -22,6 +22,7 @@
 
     <!--<label>Numero:</label><input type="text" th:field="*{numero}"  required/><br>-->
         <div>
+            <h6>"El formato del codigo debe de ser de la forma 'PP-00-00-000000-00/00' "</h6>
             <label for="numero">Numero</label> <input type="text" id="numero" th:field="*{numero}" required />
             <p th:if="${#fields.hasErrors('numero')}" th:errorclass="error" th:errors="*{numero}" />
         </div>

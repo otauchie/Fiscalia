@@ -20,9 +20,26 @@
                 <label for="descripcion">descripcion</label>
                 <input id="descripcion" type="text" th:field="*{descripcion}"/>
             </div>
+           <!-- <div class="ui checkbox">
+                <label>Estado de la causa</label>
+                <input type="checkbox" th:field="*{estado}" checked/>
+            </div>-->
+            <label>Estado de la causa</label>
+            <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="habilitado" name="habilitado" class="custom-control-input" value="1" th:field="*{estado}">
+                    <label class="custom-control-label" for="habilitado">abierta</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="deshabilitado" name="deshabilitado" class="custom-control-input" value="0" th:field="*{estado}">
+                    <label class="custom-control-label" for="deshabilitado">cerrada</label>
+                </div>
+            </div>
+
+            </br>
 
             <button type="submit" class="btn btn-primary" name="newCausa">Update</button>
-            <h1><a class="btn btn-info" th:href="@{/causas/cleanView/{id}(id=${causa.id})}">volver</a></h1>
+            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
         </form>
     </div>
 

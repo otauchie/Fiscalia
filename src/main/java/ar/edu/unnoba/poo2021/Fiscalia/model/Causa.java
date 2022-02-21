@@ -17,7 +17,7 @@ public class Causa {
     private Long id;
     @NotNull
     @Column(name ="numero" )
-    @Pattern(regexp = "^[P]{2}+[-]+[0-9]{2}+[-]+[0-9]{2}+[-]+[0-9]{6}+[-]+[0-9]{2}+[/]+[0]{2}$",message = "El formato del codigo debe de ser de la forma 'PP-00-00-000000-00/00' ")
+    @Pattern(regexp = "^[P]{2}+[-]+[0-9]{2}+[-]+[0-9]{2}+[-]+[0-9]{6}+[-]+[0-9]{2}+[/]+[0]{2}$",message = "El formato es incorrecto o el numero ya fue ingresado ")
     private String numero;
     @NotNull
     @Column(name ="fecha" )
@@ -36,8 +36,20 @@ public class Causa {
     @OneToMany(mappedBy = "causa")
     private List<Informacion>informacion;
 
+    @Column(name="estado")
+    private Boolean estado;
+
     public Causa() {
         this.fecha=new Date();
+        this.estado=true;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 
     public List<Informacion> getInformacion() {

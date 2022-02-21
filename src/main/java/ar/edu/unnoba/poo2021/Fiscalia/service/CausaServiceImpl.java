@@ -24,6 +24,7 @@ public class CausaServiceImpl implements CausaService{
     public Causa update(Causa causa) {
         Causa cDB = repository.findById(causa.getId()).get();
         cDB.setDescripcion(causa.getDescripcion());
+        cDB.setEstado(causa.getEstado());
         return repository.save(cDB);
     }
 

@@ -59,8 +59,7 @@ and open the template in the editor.
             <td th:text="${causa.victima}"></td>
             <td th:text="${causa.victimario}"></td>
 
-            <td><a th:href="@{/causas/cleanView/{id}(id=${causa.id})}"/><i class="fa fa-search"></i> </td>
-
+            <td><a th:href="@{/causas/view/{id}(id=${causa.id})}"/><i class="fa fa-search"></i></td>
 
         </tr>
         </tbody>

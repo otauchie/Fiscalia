@@ -30,7 +30,7 @@
                 <th> Nº Llamada</th>
                 <th> Nº Receptor</th>
                 <th> Duracion (min)</th>
-                <th> Eliminar </th>
+                <th th:if="${causa.estado}"> Eliminar </th>
                 <!--<th></th>-->
 
 
@@ -47,12 +47,12 @@
                      <td th:text="${info.numeroReceptor}"></td>
                      <td th:text="${info.duracion}"></td>
                      <!--<td><a th:href="@{/llamadas/edit/{id}(id=${info.id})}">Editar</a></td>-->
-                     <td><a th:href="@{/llamadas/delete/{id}(id=${info.id})}"/><i class="fa fa-remove"></i> </td>
+                     <td><a th:href="@{/llamadas/delete/{id}(id=${info.id})}"th:if="${causa.estado}"/><i class="fa fa-remove" th:if="${causa.estado}"></i> </td>
                  </div>
              </tr>
             </tbody>
         </table>
-        <h3><a  class="btn btn-info" th:href="@{/llamadas/newLlamada/{id}(id=${causa.id})}">agregar llamada</a></h3>
+        <h3><a  class="btn btn-info" th:href="@{/llamadas/newLlamada/{id}(id=${causa.id})}" th:if="${causa.estado}">agregar llamada</a></h3>
 
         <h2>Movimientos Bancarios</h2>
         <table class="table table-bordered table-sm mt-2">
@@ -67,7 +67,7 @@
                 <th> Monto</th>
                 <th> Moneda</th>
                 <th> Datos de cajero</th>
-                <th> Eliminar </th>
+                <th th:if="${causa.estado}"> Eliminar </th>
 
 
 
@@ -86,12 +86,12 @@
                     <td th:text="${info.monto}"></td>
                     <td th:text="${info.moneda}"></td>
                     <td th:text="${info.datosCajero}"></td>
-                    <td><a th:href="@{/movimientosBancarios/delete/{id}(id=${info.id})}"/><i class="fa fa-remove"></i> </td>
+                    <td><a th:href="@{/movimientosBancarios/delete/{id}(id=${info.id})}"th:if="${causa.estado}"/><i class="fa fa-remove"th:if="${causa.estado}"></i> </td>
                 </div>
             </tr>
             </tbody>
         </table>
-        <h3><a  class="btn btn-info" th:href="@{/movimientosBancarios/newMovimientoBancario/{id}(id=${causa.id})}">agregar movimiento bancario</a></h3>
+        <h3><a  class="btn btn-info" th:href="@{/movimientosBancarios/newMovimientoBancario/{id}(id=${causa.id})}"th:if="${causa.estado}" >agregar movimiento bancario</a></h3>
 
         <h2> Redes Sociales</h2>
         <table class="table table-bordered table-sm mt-2">
@@ -102,7 +102,7 @@
                 <th> Descripcion</th>
                 <th> Tipo</th>
                 <th> Perfil</th>
-                <th> Eliminar </th>
+                <th th:if="${causa.estado}"> Eliminar </th>
 
 
 
@@ -118,18 +118,18 @@
                     <td th:text="${info.descripcion}"></td>
                     <td th:text="${info.tipo}"></td>
                     <td th:text="${info.perfil}"></td>
-                    <td><a th:href="@{/redesSociales/delete/{id}(id=${info.id})}"/><i class="fa fa-remove"></i> </td>
+                    <td><a th:href="@{/redesSociales/delete/{id}(id=${info.id})}" th:if="${causa.estado}"/><i class="fa fa-remove" th:if="${causa.estado}"></i> </td>
                 </div>
 
             </tr>
             </tbody>
         </table>
-        <h3><a  class="btn btn-info" th:href="@{/redesSociales/newRedSocial/{id}(id=${causa.id})}">agregar red social</a></h3>
+        <h3><a  class="btn btn-info" th:href="@{/redesSociales/newRedSocial/{id}(id=${causa.id})}"th:if="${causa.estado}">agregar red social</a></h3>
         <br>
-        <td><a class="btn btn-info" th:href="@{/causas/editNew/{id}(id=${causa.id})}">Editar descripcion</a></td>
+        <td><a class="btn btn-info" th:href="@{/causas/edit/{id}(id=${causa.id})}">Editar</a></td>
         <br>
         <br>
-        <a class="btn btn-info" th:href="@{/causas/listaCausas}">Finalizar</a>
+        <a class="btn btn-info" th:href="@{/causas/listaCausas}">Cerrar</a>
     </div>
 
 
