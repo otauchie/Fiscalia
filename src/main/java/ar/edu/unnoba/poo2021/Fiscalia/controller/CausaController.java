@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/causas")
@@ -68,5 +69,18 @@ public class CausaController {
         return "redirect:/causas/view/"+causa.getId();
     }
 
+    @GetMapping("/buscarCausas")
+    public String buscarCausas (Causa causa,Model model, String keyword,@ModelAttribute("error") String errorMessage) {
+        if (keyword != null ) {
+            List<Causa> causas = causaService.buscarEnCausas(keyword);
+
+            model.addAttribute("causas", causas);
+        }
+        if(errorMessage!=null){
+            model.addAttribute("error",errorMessage);
+        }
+
+        return "causas/listaCausas";
+    }
 
 }

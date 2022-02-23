@@ -14,4 +14,13 @@ public interface CausaRepository extends JpaRepository<Causa,Long> {
     @Query(value = "SELECT * FROM causas " +
             "ORDER BY fecha DESC ",nativeQuery = true)
     List<Causa> ordenarCausas();
+
+    @Query(value =
+            "SELECT * FROM causas c WHERE c.numero LIKE CONCAT('%', ?1, '%')" +
+                    "OR c.victima LIKE CONCAT('%', ?1, '%')" +
+                    "OR c.victimario LIKE CONCAT('%', ?1, '%')"+
+                    "ORDER BY c.fecha DESC", nativeQuery = true)
+    List<Causa> buscarCausas(String keyword);
+
+
 }

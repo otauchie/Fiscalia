@@ -11,4 +11,5 @@ public interface CausaService {
     public Causa getCausa(Long id);
     public List<Causa> getCausas();
     public List<Causa> causasPorFecha();
+    public List<Causa> buscarEnCausas(String keyword);
 }

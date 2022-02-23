@@ -38,4 +38,9 @@ public class CausaServiceImpl implements CausaService{
     }
 
     public List<Causa> causasPorFecha(){ return repository.ordenarCausas();}
+
+    @Override
+    public List<Causa> buscarEnCausas(String keyword) {
+        return repository.buscarCausas(keyword);
+    }
 }

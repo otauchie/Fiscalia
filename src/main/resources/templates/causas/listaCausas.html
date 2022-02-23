@@ -28,6 +28,7 @@ and open the template in the editor.
             </li>
         </ul>
 
+
         <form class="form-inline my-2 my-lg-0">
 
             <a class="btn btn-outline-info" th:href="@{/logout}">Logout</a>
@@ -40,6 +41,15 @@ and open the template in the editor.
         <span class="d-block" th:text="${error}"></span>
     </div>
     <h1 >Lista de Causas</h1>
+
+
+    <form class="form-inline my-2 my-lg-0" th:action="@{/causas/buscarCausas}" method="get">
+        <input class="form-control mr-sm-2" type="search" th:value="${keyword}" placeholder="buscar causa" name="keyword">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">buscar</button>
+    </form>
+
+
+
     <table class="table table-bordered table-sm mt-2">
         <thead>
         <tr>
