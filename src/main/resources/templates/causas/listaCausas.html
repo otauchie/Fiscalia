@@ -12,7 +12,7 @@ and open the template in the editor.
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/78bfd29989.js" crossorigin="anonymous"></script>
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -57,18 +57,21 @@ and open the template in the editor.
             <th>Nº</th>
             <th>Victima</th>
             <th>Victimario</th>
-
+            <th>Estado</th>
             <th>Ver</th>
 
         </tr>
         </thead>
         <tbody>
         <tr th:each="causa : ${causas}" >
-            <td th:text="${#dates.format(causa.fecha, 'dd/MM/yyyy')}"></td>
+            <td th:text="${#dates.format(causa.fecha, 'dd/MM/yyyy' )}"></td>
             <td th:text="${causa.numero}"></td>
             <td th:text="${causa.victima}"></td>
             <td th:text="${causa.victimario}"></td>
-
+            <td>
+                <span th:if="${causa.estado}"><i  class="fa fa-check"></i> Abierta</span>
+                <span th:unless="${causa.estado}"><i  class="fa fa-ban"></i> Cerrada</span>
+            </td>
             <td><a th:href="@{/causas/view/{id}(id=${causa.id})}"/><i class="fa fa-search"></i></td>
 
         </tr>

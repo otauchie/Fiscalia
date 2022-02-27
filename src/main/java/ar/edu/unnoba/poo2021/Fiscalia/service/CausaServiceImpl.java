@@ -1,12 +1,13 @@
 package ar.edu.unnoba.poo2021.Fiscalia.service;
 
 import ar.edu.unnoba.poo2021.Fiscalia.model.Causa;
+import ar.edu.unnoba.poo2021.Fiscalia.model.Informacion;
 import ar.edu.unnoba.poo2021.Fiscalia.model.User;
 import ar.edu.unnoba.poo2021.Fiscalia.repository.CausaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class CausaServiceImpl implements CausaService{
@@ -15,7 +16,6 @@ public class CausaServiceImpl implements CausaService{
 
     @Override
     public Causa create(Causa causa){
-        if (repository.findByNumero(causa.getNumero())==null)
             causa = repository.save(causa);
         return causa;
     }
@@ -43,4 +43,52 @@ public class CausaServiceImpl implements CausaService{
     public List<Causa> buscarEnCausas(String keyword) {
         return repository.buscarCausas(keyword);
     }
+
+    @Override
+    public List<Informacion> listaOrdenada(Causa causa) {
+
+        Causa cBD=repository.findById(causa.getId()).get();
+        List <Informacion> aux=new ArrayList<>();
+        if (cBD.getInformacion().size()==0){
+            return aux;
+        }else{
+            Informacion infoMin= cBD.getInformacion().get(0);
+            Informacion infoMax= cBD.getInformacion().get(0);
+            Informacion puntero= cBD.getInformacion().get(0);
+            Informacion puntero2= cBD.getInformacion().get(0);
+
+            for(Informacion x: cBD.getInformacion()){
+
+                if (x.getFechaHora().before(infoMin.getFechaHora())){
+                    infoMin=x;
+                }
+                if (x.getFechaHora().after(infoMax.getFechaHora())){
+                    infoMax=x;
+                    puntero=x;
+                    puntero2=x;
+                }
+            }
+            aux.add(infoMin);
+            while(puntero.getFechaHora().after(infoMin.getFechaHora())){
+
+                for(Informacion x: cBD.getInformacion()){
+                    if(x.getFechaHora().before(puntero2.getFechaHora()) && x.getFechaHora().after(infoMin.getFechaHora())){
+                        puntero2=x;
+                    }
+                    if(puntero.getFechaHora().after(puntero2.getFechaHora())){
+                        puntero=puntero2;
+                    }
+                }
+                aux.add(puntero);
+                infoMin=puntero;
+                puntero=infoMax;
+                puntero2=infoMax;
+
+            }
+            return aux;
+        }
+
+
+    }
+
 }

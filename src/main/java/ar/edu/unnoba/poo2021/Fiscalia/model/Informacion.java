@@ -12,7 +12,7 @@ public abstract class Informacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String DireccionIP;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date FechaHora;
     @ManyToOne
     @JoinColumn(name = "causa_id")

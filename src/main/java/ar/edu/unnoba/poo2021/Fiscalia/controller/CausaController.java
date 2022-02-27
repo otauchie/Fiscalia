@@ -54,6 +54,7 @@ public class CausaController {
     public String causaView(@PathVariable("id") Long causaId, Model model){
         Causa causa = causaService.getCausa(causaId);
         model.addAttribute("causa",causa);
+        model.addAttribute("cronologia",causaService.listaOrdenada(causa));
         return "causas/view";
     }
     @GetMapping("/edit/{id}")
