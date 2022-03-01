@@ -26,6 +26,7 @@ public class MovimientoBancarioController {
         MovimientoBancario movimientoBancario= new MovimientoBancario();
         movimientoBancario.setCausa(causa);
         model.addAttribute("movimiento",movimientoBancario);
+        model.addAttribute("causa",causa);
         return "movimientosBancarios/newMovimientoBancario";
     }
 

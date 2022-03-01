@@ -10,9 +10,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    <div class="container border gx-    5">
-        <h1 >Editar Causa</h1>
+<body style="background: #333333">
+<div class="container py-5 h-100">
+    <div class="card shadow-8   -strong" style="border-radius: 4rem;">
+        <div class="card-body p-5 text-center">
+        <h1s >Editar Caua</h1>
         <form action="#" th:action="@{/causas/update}" th:object="${causa}" method="post">
             <h2 th:text="${causa.numero}"></h2>
             <input type="hidden" th:value="${causa.id}" th:attr="name='id'"/>
@@ -21,7 +23,7 @@
                 <input id="descripcion" type="text" th:field="*{descripcion}"/>
             </div>
 
-            <label>Estado de la causa</label>
+            <label>Estado de la causa:</label>
             <div class="form-group">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="habilitado" name="habilitado" class="custom-control-input" value="1" th:field="*{estado}">
@@ -39,6 +41,8 @@
             <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
         </form>
     </div>
+    </div>
+</div>
 
 </body>
 </html>

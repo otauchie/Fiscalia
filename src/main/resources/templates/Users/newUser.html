@@ -14,27 +14,32 @@
 
     <div class="card shadow-8   -strong" style="border-radius: 4rem;">
         <div class="card-body p-5 text-center" >
-
+            <div><h3>Nuevo Usuario</h3></div>
     <form action="#" th:action="@{/users}" th:object="${user}" method="post">
-        <div><h3>Nuevo Usuario</h3></div>
-        <label>Nombre:</label>
-        <input type="text" th:field="*{nombre}" required/><br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nombre:</label><input class="form-control" type="text" th:field="*{nombre}" required/><br>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Apellido:</label><input class="form-control" type="text" th:field="*{apellido}" required/><br>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>E-mail:</label><input class="form-control" type="email" th:field="*{email}" required><br>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Contraseña:</label><input class="form-control" type="password" th:field="*{password}"required/><br>
+            </div>
+        </div>
 
-        <label>Apellido:</label>
-        <input type="text" th:field="*{apellido}" required/><br>
-
-
-        <label>E-mail:</label>
-        <input type="email" th:field="*{email}" required><br>
-
-        <label>Contraseña:</label>
-
-        <input type="password" th:field="*{password}"required/><br>
-
-        <button class="btn btn-info" type="submit" name="newUser">Create</button>
-        <h3><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Volver</a></h3>
-
+        <div class="form-row">
+            <div class="form-group col-md-12 ">
+                <button class="btn btn-info" type="submit" name="newUser">Create</button>
+            </div>
+        </div>
     </form>
+            <h3><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Volver</a></h3>
         </div>
 
     </div>

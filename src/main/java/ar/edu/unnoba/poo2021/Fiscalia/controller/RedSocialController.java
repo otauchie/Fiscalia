@@ -25,6 +25,7 @@ public class RedSocialController {
         RedSocial redSocial= new RedSocial();
         redSocial.setCausa(causa);
         model.addAttribute("redSocial",redSocial);
+        model.addAttribute("causa",causa);
         return "redesSociales/newRedSocial";
     }
 

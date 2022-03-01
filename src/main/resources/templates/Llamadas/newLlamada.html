@@ -9,7 +9,7 @@
 
     <title>Crear Llamada</title>
 </head>
-<body>
+<body style="background:	#333333">
 <div class="container py-5 h-100">
     <div class="card shadow-8   -strong" style="border-radius: 4rem;">
         <div class="card-body p-5 text-center" >
@@ -17,15 +17,31 @@
 
         <div><h3>Nueva Llamada</h3></div>
     <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
-        <label> DireccionIP:</label><input type="text" th:field="*{DireccionIP}" required/><br>
-        <label>numero llamada:</label><input type="text" th:field="*{numeroLlamada}" required/><br>
-        <label>numnero receptor:</label><input type="text" th:field="*{numeroReceptor}" required/><br>
-        <label>Duración:</label><input type="text" th:field="*{duracion}" required/><br>
-        <label>Descripción:</label><input type="text" th:field="*{descripcion}" required/><br>
-        <label>fecha</label><input type="datetime-local" th:field="*{FechaHora}" required><br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Numero Emisor:</label><input class="form-control" type="text" th:field="*{numeroLlamada}" required/><br>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Numero receptor:</label><input class="form-control" type="text" th:field="*{numeroReceptor}" required/><br>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label> DireccionIP:</label><input class="form-control" type="text" th:field="*{DireccionIP}" required/><br>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Duración:</label><input class="form-control" type="text" th:field="*{duracion}" required/><br>
+            </div>
+            <div class="form-group col-md-4">
+                <label>fecha</label><input class="form-control" type="datetime-local" th:field="*{FechaHora}" required><br>
+            </div>
+        </div>
+        <label>Descripción:</label><input class="form-control" type="text" th:field="*{descripcion}" required/><br>
+
        <!--label>Nro de causa:</label--><input type="text" th:field="*{causa}" readonly hidden/><br>
-        <button type="submit" name="newLlamadaTelefonica">Create</button>
+        <button  class="btn btn-info" type="submit" name="newLlamadaTelefonica">Create</button>
     </form>
+            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
 
         </div>
     </div>

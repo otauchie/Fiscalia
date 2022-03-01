@@ -23,11 +23,12 @@ public class LlamadaTelefonicaController {
 
 
     @GetMapping("/newLlamada/{id}")
-    public String LlamadaTelefonicaNew( @PathVariable("id") Long id, Model model, Model modelCausa){
+    public String LlamadaTelefonicaNew( @PathVariable("id") Long id, Model model){
         Causa causa=causaService.getCausa(id);
         LlamadaTelefonica llamadaTelefonica= new LlamadaTelefonica();
         llamadaTelefonica.setCausa(causa);
         model.addAttribute("llamadaTelefonica",llamadaTelefonica);
+        model.addAttribute("causa",causa);
 
         return "llamadas/newLlamada";
     }
