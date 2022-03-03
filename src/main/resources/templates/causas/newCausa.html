@@ -22,13 +22,13 @@
 
     <!--<label>Numero:</label><input type="text" th:field="*{numero}"  required/><br>-->
         <div>
-            <h6>"El formato del codigo debe de ser de la forma 'PP-00-00-000000-00/00' "</h6>
-            <label for="numero">Numero</label> <input class="form-control" type="text" id="numero" th:field="*{numero}" required />
+            <h6>El formato del número debe de ser de la forma 'PP-00-00-000000-00/00'</h6>
+            <label for="numero">Número:</label> <input class="form-control" type="text" id="numero" th:field="*{numero}" required />
             <p th:if="${#fields.hasErrors('numero')}" th:errorclass="error" th:errors="*{numero}" />
         </div>
-    <label>victima:</label><input class="form-control" type="text" th:field="*{victima}" required/><br>
+    <label>Víctima:</label><input class="form-control" type="text" th:field="*{victima}" required/><br>
     <label>Victimario:</label><input class="form-control" type="text" th:field="*{victimario}" required/><br>
-    <label>Descripcion:</label><input class="form-control" type="text" th:field="*{descripcion}" required/><br>
+    <label>Descripción:</label><input class="form-control" type="text" th:field="*{descripcion}" required/><br>
     <button type="submit" class="btn btn-info" name="Crear causa">Crear</button>
         <h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Volver</a></h3>
     </form>

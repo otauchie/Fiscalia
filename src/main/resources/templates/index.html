@@ -34,17 +34,17 @@
 </div>-->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-info ">
-    <a class="navbar-brand" th:href="@{/}">Home</a>
+    <a class="navbar-brand" th:href="@{/}">Inicio</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link"  th:href="@{/users/listaUsuarios}">lista usuarios</span></a>
+                <a class="nav-link"  th:href="@{/users/listaUsuarios}">Lista de usuarios</span></a>
             </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-info" th:href="@{/logout}">Logout</a>
+            <a class="btn btn-info" th:href="@{/logout}">Cerrar sesión</a>
         </form>
     </div>
 </nav>
@@ -56,8 +56,8 @@
 
 
 
-<h2>listas:</h2>
-<h3><a  class="btn btn-info" th:href="@{/users/listaUsuarios}">lista usuarios</a></h3>
+<h2>Listas:</h2>
+<h3><a  class="btn btn-info" th:href="@{/users/listaUsuarios}">Lista de usuarios</a></h3>
 <h3><a class="btn btn-info" th:href="@{/causas/listaCausas}">Lista de causas</a></h3>
 </div>
 </body>

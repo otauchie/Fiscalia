@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>lista Causas</title>
+    <title>Lista de causas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,22 +16,22 @@ and open the template in the editor.
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" th:href="@{/}">Home</a>
+    <a class="navbar-brand" th:href="@{/}">Inicio</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link"  th:href="@{/users/listaUsuarios}">lista usuarios</span></a>
+                <a class="nav-link"  th:href="@{/users/listaUsuarios}">Lista de usuarios</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" th:href="@{/causas/newCausa}">Nueva Causa</a>
+                <a class="nav-link" th:href="@{/causas/newCausa}">Nueva causa</a>
             </li>
         </ul>
 
 
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-info" th:href="@{/logout}">Logout</a>
+            <a class="btn btn-outline-info" th:href="@{/logout}">Cerrar sesión</a>
         </form>
     </div>
 </nav>
@@ -40,12 +40,12 @@ and open the template in the editor.
     <div th:if="${error != ''}" class="alert alert-danger" role="alert">
         <span class="d-block" th:text="${error}"></span>
     </div>
-    <h1 >Lista de Causas</h1>
+    <h1 >Lista de causas</h1>
 
 
     <form class="form-inline my-2 my-lg-0" th:action="@{/causas/buscarCausas}" method="get">
-        <input class="form-control mr-sm-2" type="search" th:value="${keyword}" placeholder="buscar causa" name="keyword">
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">buscar</button>
+        <input class="form-control mr-sm-2" type="search" th:value="${keyword}" placeholder="Buscar causa" name="keyword">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
     </form>
 
 
@@ -55,7 +55,7 @@ and open the template in the editor.
         <tr>
             <th>Fecha</th>
             <th>Nº</th>
-            <th>Victima</th>
+            <th>Víctima</th>
             <th>Victimario</th>
             <th>Estado</th>
             <th>Ver</th>

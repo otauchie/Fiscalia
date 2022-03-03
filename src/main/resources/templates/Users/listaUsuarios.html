@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>lista usuarios</title>
+    <title>Lista de usuarios</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,21 +18,21 @@ and open the template in the editor.
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" th:href="@{/}">Home</a>
+    <a class="navbar-brand" th:href="@{/}">Inicio</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link"  th:href="@{/causas/listaCausas}">lista Causas</span></a>
+                <a class="nav-link"  th:href="@{/causas/listaCausas}">Lista de causas</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" th:href="@{/users/newUser}">Crear Usuario</a>
+                <a class="nav-link" th:href="@{/users/newUser}">Crear usuario</a>
             </li>
 
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-outline-info" th:href="@{/logout}">Logout</a>
+            <a class="btn btn-outline-info" th:href="@{/logout}">Cerrar sesión</a>
         </form>
     </div>
 </nav>
@@ -41,7 +41,7 @@ and open the template in the editor.
     <div th:if="${error != ''}" class="alert alert-danger" role="alert">
         <span class="d-block" th:text="${error}"></span>
     </div>
-    <h1 >Usuarios</h1>
+    <h1 >Lista de usuarios</h1>
     <table class="table table-bordered table-sm mt-2">
         <thead>
         <tr>
