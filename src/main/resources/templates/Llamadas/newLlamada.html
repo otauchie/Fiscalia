@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <title>Crear Llamada</title>
+    <title>Crear llamada telefónica</title>
 </head>
 <body style="background:	#333333">
 <div class="container py-5 h-100">
@@ -15,33 +15,33 @@
         <div class="card-body p-5 text-center" >
 
 
-        <div><h3>Nueva Llamada</h3></div>
+        <div><h3>Nueva llamada</h3></div>
     <form action="#" th:action="@{/llamadas}" th:object="${llamadaTelefonica}" method="post">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label>Numero Emisor:</label><input class="form-control" type="text" th:field="*{numeroLlamada}" required/><br>
+                <label>Número emisor:</label><input class="form-control" type="text" th:field="*{numeroLlamada}" required/><br>
             </div>
             <div class="form-group col-md-6">
-                <label>Numero receptor:</label><input class="form-control" type="text" th:field="*{numeroReceptor}" required/><br>
+                <label>Número receptor:</label><input class="form-control" type="text" th:field="*{numeroReceptor}" required/><br>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label> DireccionIP:</label><input class="form-control" type="text" th:field="*{DireccionIP}" required/><br>
+                <label> Dirección IP:</label><input class="form-control" type="text" th:field="*{DireccionIP}" required/><br>
             </div>
             <div class="form-group col-md-4">
                 <label>Duración:</label><input class="form-control" type="text" th:field="*{duracion}" required/><br>
             </div>
             <div class="form-group col-md-4">
-                <label>fecha</label><input class="form-control" type="datetime-local" th:field="*{FechaHora}" required><br>
+                <label>Fecha y hora:</label><input class="form-control" type="datetime-local" th:field="*{FechaHora}" required><br>
             </div>
         </div>
         <label>Descripción:</label><input class="form-control" type="text" th:field="*{descripcion}" required/><br>
 
        <!--label>Nro de causa:</label--><input type="text" th:field="*{causa}" readonly hidden/><br>
-        <button  class="btn btn-info" type="submit" name="newLlamadaTelefonica">Create</button>
+        <button  class="btn btn-info" type="submit" name="newLlamadaTelefonica">Crear</button>
     </form>
-            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
+            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">Volver</a></h1>
 
         </div>
     </div>

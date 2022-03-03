@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Editar User</title>
+    <title>Editar usuario</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 <div class="container py-5 h-100">
     <div class="card shadow-8   -strong" style="border-radius: 4rem;">
         <div class="card-body p-5 text-center">
-            <h1 >Modificar Usuario</h1>
+            <h1 >Modificar usuario</h1>
             <form action="#" th:action="@{/users/update}" th:object="${user}" method="post">
 
                 <input type="hidden" th:value="${user.id}" th:attr="name='id'"/>
@@ -26,8 +26,8 @@
                     <label for="apellido">Apellido:</label>
                     <input id="apellido" type="text" th:field="*{apellido}"/>
                 </div>
-                <button type="submit" class="btn btn-primary" name="newUser">Modificar</button>
-                <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Lista Usuarios</a></h1>
+                <button type="submit" class="btn btn-primary" name="newUser">Guardar cambios</button>
+                <h1><a class="btn btn-info" th:href="@{/users/listaUsuarios}">Cancelar y volver</a></h1>
             </form>
         </div>
     </div>

@@ -14,12 +14,12 @@
 <div class="container py-5 h-100">
     <div class="card shadow-8   -strong" style="border-radius: 4rem;">
         <div class="card-body p-5 text-center">
-        <h1s >Editar Caua</h1>
+        <h1s >Editar causa</h1>
         <form action="#" th:action="@{/causas/update}" th:object="${causa}" method="post">
             <h2 th:text="${causa.numero}"></h2>
             <input type="hidden" th:value="${causa.id}" th:attr="name='id'"/>
             <div class="form-group">
-                <label for="descripcion">descripcion</label>
+                <label for="descripcion">Descripción:</label>
                 <input id="descripcion" type="text" th:field="*{descripcion}"/>
             </div>
 
@@ -27,18 +27,18 @@
             <div class="form-group">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="habilitado" name="habilitado" class="custom-control-input" value="1" th:field="*{estado}">
-                    <label class="custom-control-label" for="habilitado">abierta</label>
+                    <label class="custom-control-label" for="habilitado">Abierta</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="deshabilitado" name="deshabilitado" class="custom-control-input" value="0" th:field="*{estado}">
-                    <label class="custom-control-label" for="deshabilitado">cerrada</label>
+                    <label class="custom-control-label" for="deshabilitado">Cerrada</label>
                 </div>
             </div>
 
             </br>
 
-            <button type="submit" class="btn btn-primary" name="newCausa">Update</button>
-            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">volver</a></h1>
+            <button type="submit" class="btn btn-primary" name="newCausa">Modificar</button>
+            <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">Volver</a></h1>
         </form>
     </div>
     </div>
