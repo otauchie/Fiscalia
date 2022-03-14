@@ -13,6 +13,7 @@ public class MovimientoBancario extends Informacion{
     private String moneda;
     private String datosCajero;
 
+    //inicializo los atributos que definen q tipo de informacion es, en este caso esMovimiento sera true
     public MovimientoBancario() {
         this.setEsLlamada(false);
         this.setEsMovimiento(true);

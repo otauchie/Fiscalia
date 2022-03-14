@@ -39,19 +39,7 @@ public class LlamadaTelefonicaController {
       llamadaTelefonicaService.create(llamadaTelefonica);
         return "redirect:/causas/view/"+llamadaTelefonica.getCausa().getId();
     }
-/*
-    @PostMapping("/update")
-    public String update(@ModelAttribute LlamadaTelefonica llamadaTelefonica){
-        llamadaTelefonicaService.update(llamadaTelefonica);
-        return "redirect:/causas/view/"+llamadaTelefonica.getCausa().getId();
-    }
-    @GetMapping("/edit/{id}")
-    public String llamadaEdit(@PathVariable("id") Long llamadaId, Model model){
-        LlamadaTelefonica llamadaTelefonica = llamadaTelefonicaService.getLlamadaTelefonica(llamadaId);
-        model.addAttribute("llamada",llamadaTelefonica);
-        return "llamadas/edit";
-    }
-    */
+
 
     @GetMapping("/delete/{id}")
     public String llamadaDelete(@PathVariable("id") Long id){

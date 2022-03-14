@@ -28,7 +28,8 @@
                 </div>
             </div>
             <label>Descripción:</label><input class="form-control" type="text" th:field="*{descripcion}" required/>
-            <input type="text" th:field="*{causa}" readonly hidden/><br>
+            <!--label>Nro de causa:</label--><input type="text" th:field="*{causa}" readonly hidden/><br>
+
             <button class="btn btn-info" type="submit" name="newRedSocial">Crear</button>
         </form>
             <h1><a class="btn btn-info" th:href="@{/causas/view/{id}(id=${causa.id})}">Volver</a></h1>

@@ -9,6 +9,7 @@ public class RedSocial extends Informacion{
     private String tipo;
     private String perfil;
 
+    //inicializo los atributos que definen q tipo de informacion es, en este caso esRedSocial sera true
     public RedSocial() {
         this.setEsLlamada(false);
         this.setEsMovimiento(false);

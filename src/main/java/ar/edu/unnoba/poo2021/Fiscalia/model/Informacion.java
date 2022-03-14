@@ -19,7 +19,7 @@ public abstract class Informacion {
     private Causa causa;
 
     private String descripcion;
-
+    //agregamos estos atributos para que al momento de utilizar los distintos tipos de informacion, tengan campos en comun para diferenciarlos
     private Boolean esLlamada;
     private Boolean esMovimiento;
     private Boolean esRedSocial;

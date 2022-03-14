@@ -11,10 +11,12 @@ import java.util.List;
 public interface CausaRepository extends JpaRepository<Causa,Long> {
     public Causa findByNumero(String numero);
 
+    // Con este query conseguimos la lista de causas ordenadas por fecha de la mas actual a la mas antigua
     @Query(value = "SELECT * FROM causas " +
             "ORDER BY fecha DESC ",nativeQuery = true)
     List<Causa> ordenarCausas();
 
+    //Este query permite buscar las causas por Nº, victima o victimario
     @Query(value =
             "SELECT * FROM causas c WHERE lower(c.numero) LIKE lower(CONCAT('%', ?1, '%'))" +
                     "OR lower(c.victima) LIKE lower(CONCAT('%', ?1, '%'))" +

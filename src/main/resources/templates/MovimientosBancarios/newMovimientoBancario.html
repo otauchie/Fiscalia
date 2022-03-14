@@ -26,13 +26,21 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label>Tipo de transacción:</label><input class="form-control" type="text" th:field="*{tipoTransaccion}" required/><br>
+                <label>Tipo de transacción:</label><select class="form-control" type="text" th:field="*{tipoTransaccion}" required>
+                <option value="Depósito" selected>Depósito</option>
+                <option value="Extracción">Extracción</option>
+                <option value="Transferencia">Transferencia</option>
+            </select><br>
             </div>
             <div class="form-group col-md-4">
                 <label>Monto:</label><input class="form-control" type="text" th:field="*{monto}" required/><br>
             </div>
             <div class="form-group col-md-4">
-                <label>Moneda:</label><input class="form-control" type="text" th:field="*{moneda}" required/><br>
+                <label>Moneda:</label><select class="form-control" type="text" th:field="*{moneda}" required>
+                <option value="ARS" selected>ARS</option>
+                <option value="U$D">U$D</option>
+                <option value="EUR">EUR</option>
+            </select><br>
             </div>
         </div>
         <div class="form-row">
@@ -44,7 +52,7 @@
             </div>
         </div>
         <label>Descripción:</label><input class="form-control" type="text" th:field="*{descripcion}" required/><br>
-        <input type="text" th:field="*{causa}" readonly hidden/><br>
+        <!--label>Nro de causa:</label--><input type="text" th:field="*{causa}" readonly hidden/><br>
 
         <button class="btn btn-info" type="submit" name="newMovimientoBancario">Crear</button>
     </form>

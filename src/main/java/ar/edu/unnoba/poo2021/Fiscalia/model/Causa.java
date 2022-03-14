@@ -17,7 +17,7 @@ public class Causa {
     private Long id;
     @NotNull
     @Column(name ="numero" )
-    @Pattern(regexp = "^[P]{2}+[-]+[0-9]{2}+[-]+[0-9]{2}+[-]+[0-9]{6}+[-]+[0-9]{2}+[/]+[0]{2}$",message = "El formato es incorrecto o el numero ya fue ingresado ")
+    @Pattern(regexp = "^[P]{2}+[-]+[0-9]{2}+[-]+[0-9]{2}+[-]+[0-9]{6}+[-]+[0-9]{2}+[/]+[0]{2}$",message = "El formato es incorrecto ") //establecemos el patron con el cual debera ser ingresado el numero de causa
     private String numero;
     @NotNull
     @Column(name ="fecha" )
@@ -40,6 +40,7 @@ public class Causa {
     private Boolean estado;
 
     public Causa() {
+        //inicializo los atributos que llevan valores por defecto
         this.fecha=new Date();
         this.estado=true;
     }

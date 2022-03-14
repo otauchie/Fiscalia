@@ -14,10 +14,13 @@
         <h1 >Información</h1>
         <span class="d-block p-2 bg-dark text-white" th:text="${'Nº: ' + causa.numero}"></span>
         <span class="d-block" th:text="${'Fecha: ' + causa.fecha}"></span>
-        <span class="d-block" th:text="${'Victima: ' + causa.victima}"></span>
+        <span class="d-block" th:text="${'Víctima: ' + causa.victima}"></span>
         <span class="d.block" th:text="${'Victimario: '+ causa.victimario}"></span>
         <br>
-        <span class="d.block" th:text="${'Descripcion: '+ causa.descripcion}"></span>
+        <span class="d.block" th:text="${'Descripción: '+ causa.descripcion}"></span>
+        <br>
+        <br>
+        <td><a class="btn btn-info" th:href="@{/causas/edit/{id}(id=${causa.id})}">Editar descripción y/o estado</a></td>
         <br>
 
         <h2> Llamadas telefónicas</h2>
@@ -31,7 +34,7 @@
                 <th> Nº Receptor</th>
                 <th> Duración (min)</th>
                 <th th:if="${causa.estado}"> Eliminar </th>
-                <!--<th></th>-->
+
 
 
             </tr>
@@ -46,7 +49,6 @@
                      <td th:text="${info.numeroLlamada}"></td>
                      <td th:text="${info.numeroReceptor}"></td>
                      <td th:text="${info.duracion}"></td>
-                     <!--<td><a th:href="@{/llamadas/edit/{id}(id=${info.id})}">Editar</a></td>-->
                      <td><a th:href="@{/llamadas/delete/{id}(id=${info.id})}"th:if="${causa.estado}"/><i class="fa fa-remove" th:if="${causa.estado}"></i> </td>
                  </div>
              </tr>
@@ -125,9 +127,7 @@
             </tbody>
         </table>
         <h3><a  class="btn btn-info" th:href="@{/redesSociales/newRedSocial/{id}(id=${causa.id})}"th:if="${causa.estado}">Agregar red social</a></h3>
-        <br>
-        <td><a class="btn btn-info" th:href="@{/causas/edit/{id}(id=${causa.id})}">Editar</a></td>
-        <br>
+
         <br>
 
         <h2> Cronología</h2>
@@ -138,6 +138,7 @@
                 <th> Fecha y hora</th>
                 <th> Descripción</th>
                 <th> Tipo de información</th>
+                <th> Detalle </th>
 
 
 
@@ -153,6 +154,11 @@
                         <span th:if="${info.esLlamada}"><i class="fa fa-phone"></i> Llamada telefónica</span>
                         <span th:if="${info.esMovimiento}"><i class="fa-solid fa-landmark"></i> Movimiento bancario</span>
                         <span th:if="${info.esRedSocial}"><i class="fa fa-users"></i> Red social</span>
+                    </td>
+                    <td>
+                        <span th:if="${info.esLlamada}" th:text="'Nº emisor: ' + ${info.numeroLlamada}"></span>
+                        <span th:if="${info.esMovimiento}" th:text="'Nº cuenta: '+${info.cuenta}"></span>
+                        <span th:if="${info.esRedSocial}" th:text="'Tipo: ' + ${info.tipo}"></span>
                     </td>
 
 

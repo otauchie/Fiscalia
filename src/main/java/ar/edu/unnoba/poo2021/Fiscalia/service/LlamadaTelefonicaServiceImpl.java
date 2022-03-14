@@ -22,19 +22,7 @@ public class LlamadaTelefonicaServiceImpl implements LlamadaTelefonicaService{
     public LlamadaTelefonica getLlamadaTelefonica(Long id) {
         return repository.findById(id).get();
     }
-/*
-    @Override
-    public LlamadaTelefonica update(LlamadaTelefonica llamadaTelefonica) {
-        LlamadaTelefonica llamadaDB = repository.findById(llamadaTelefonica.getId()).get();
-        llamadaDB.setNumeroLlamada(llamadaTelefonica.getNumeroLlamada());
-        llamadaDB.setNumeroReceptor(llamadaTelefonica.getNumeroReceptor());
-        llamadaDB.setDuracion(llamadaTelefonica.getDuracion());
-        llamadaDB.setDescripcion(llamadaTelefonica.getDescripcion());
-        llamadaDB.setFechaHora(llamadaTelefonica.getFechaHora());
-        llamadaDB.setDireccionIP(llamadaTelefonica.getDireccionIP());
-        return repository.save(llamadaDB);
-    }
-*/
+
     @Override
     public void delete(Long id) {
         repository.deleteById(id);

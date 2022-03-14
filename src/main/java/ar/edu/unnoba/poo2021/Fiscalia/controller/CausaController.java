@@ -40,6 +40,7 @@ public class CausaController {
 
         return "redirect:/causas/view/"+causa.getId();
     }
+    //Lista las causas por fecha de forma descendende de la mas actual a la mas antigua
     @GetMapping("/listaCausas")
     public String getCausas(Model model,
                            @ModelAttribute("error") String errorMessage){
@@ -70,6 +71,7 @@ public class CausaController {
         return "redirect:/causas/view/"+causa.getId();
     }
 
+    // Metodo para el buscador de causas
     @GetMapping("/buscarCausas")
     public String buscarCausas (Causa causa,Model model, String keyword,@ModelAttribute("error") String errorMessage) {
         if (keyword != null ) {

@@ -20,7 +20,6 @@
 
     <form action="#" th:action="@{/causas}" th:object="${causa}" method="post">
 
-    <!--<label>Numero:</label><input type="text" th:field="*{numero}"  required/><br>-->
         <div>
             <h6>El formato del número debe de ser de la forma 'PP-00-00-000000-00/00'</h6>
             <label for="numero">Número:</label> <input class="form-control" type="text" id="numero" th:field="*{numero}" required />

@@ -11,6 +11,7 @@ public class LlamadaTelefonica extends Informacion {
     private String numeroReceptor;
     private Integer duracion;
 
+    //inicializo los atributos que definen q tipo de informacion es, en este caso esLlamada sera true
     public LlamadaTelefonica() {
         this.setEsLlamada(true);
         this.setEsMovimiento(false);
