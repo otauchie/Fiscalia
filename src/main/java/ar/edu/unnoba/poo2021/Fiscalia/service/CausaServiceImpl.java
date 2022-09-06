@@ -55,7 +55,6 @@ public class CausaServiceImpl implements CausaService{
             Informacion infoMin= cBD.getInformacion().get(0);
             Informacion infoMax= cBD.getInformacion().get(0);
             Informacion puntero= cBD.getInformacion().get(0);
-            Informacion puntero2= cBD.getInformacion().get(0);
 
             for(Informacion x: cBD.getInformacion()){
 
@@ -65,24 +64,23 @@ public class CausaServiceImpl implements CausaService{
                 if (x.getFechaHora().after(infoMax.getFechaHora())){
                     infoMax=x;
                     puntero=x;
-                    puntero2=x;
+
                 }
             }
             aux.add(infoMin);
             while(puntero.getFechaHora().after(infoMin.getFechaHora())){
 
                 for(Informacion x: cBD.getInformacion()){
-                    if(x.getFechaHora().before(puntero2.getFechaHora()) && x.getFechaHora().after(infoMin.getFechaHora())){
-                        puntero2=x;
+                    if(x.getFechaHora().before(puntero.getFechaHora()) && x.getFechaHora().after(infoMin.getFechaHora())){
+                        puntero=x;
+
                     }
-                    if(puntero.getFechaHora().after(puntero2.getFechaHora())){
-                        puntero=puntero2;
-                    }
+
                 }
                 aux.add(puntero);
                 infoMin=puntero;
                 puntero=infoMax;
-                puntero2=infoMax;
+
 
             }
             return aux;
